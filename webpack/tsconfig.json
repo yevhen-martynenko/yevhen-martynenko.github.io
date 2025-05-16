@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "outDir": "static/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "target": "ESNext",
+    "jsx": "react",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": false,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@images/*": ["./assets/images/*"],
+      "@icons/*": ["./assets/images/icons/*"],
+      "@fonts/*": ["./assets/fonts/*"],
+      // "@images/*": ["./src/assets/images/*"],
+      // "@icons/*": ["./src/assets/images/icons/*"],
+      // "@fonts/*": ["./src/assets/fonts/*"]
+    }
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "NodeNext"
+    }
+  }
+}
