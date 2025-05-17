@@ -4,17 +4,17 @@ import { fileURLToPath } from "url";
 import type { BuildPaths, BuildMode, BuildPlatform } from "./webpack_config/types/types";
 import { build_webpack } from "./webpack_config/build_webpack.ts";
 import { MAIN_HTML_PAGE, DEFAULT_PATHS, ENTRY_PATHS } from "./webpack_config/_config_.ts";
-
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+export const __filename = fileURLToPath(import.meta.url);
+export const __dirname = path.dirname(__filename);
 
 interface EnvVariables {
     mode?: BuildMode,
     port?: number,
     analyzer?: boolean,
     platform?: BuildPlatform,
+    logging?: boolean,
 };
+
 const ENTRY_VALUES: Record<string, string> = Object.fromEntries(
     Object.entries(ENTRY_PATHS).map(([key, value]) => [
         key,
@@ -34,20 +34,20 @@ export default (env: EnvVariables) => {
     };
 
     const config: webpack.Configuration = build_webpack({
-        port: env.port ?? 3000,
+        port: env.port ?? 3300,
         mode: env.mode ?? "development",
         paths,
         analyzer: env.analyzer ?? false,
         platform: env.platform ?? "desktop",
+        logging: env.logging ?? false,
     });
 
-    if (env.mode === "development") {
+    if (env.mode === "development" && env.logging) {
         logging(env, paths);
     }
 
     return config;
 }
-
 
 function logging(env: EnvVariables, paths: BuildPaths) {
     console.log("\n\n───────────────────────────────────────────");

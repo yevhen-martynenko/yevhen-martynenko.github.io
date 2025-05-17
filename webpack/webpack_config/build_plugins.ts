@@ -55,13 +55,7 @@ export function build_plugins(options: BuildOptions): Configuration["plugins"] {
 
     const plugins: Configuration["plugins"] = [
         ...html_plugins,
-        new webpack.DefinePlugin({
-            // <REPLACE_ME>:
-            __PLATFORM__: JSON.stringify(options.platform),
-            __MODE__: JSON.stringify(options.mode),
-        }),
         ...(copy_patterns.length > 0 ? [new CopyPlugin({ patterns: copy_patterns })] : []),
-        new CleanWebpackPlugin(),
         new CleanWebpackPlugin(),
     ]
 

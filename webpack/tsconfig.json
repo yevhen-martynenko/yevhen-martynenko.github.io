@@ -21,10 +21,7 @@
       "@styles/*": ["./src/styles/*"],
       "@images/*": ["./assets/images/*"],
       "@icons/*": ["./assets/images/icons/*"],
-      "@fonts/*": ["./assets/fonts/*"],
-      // "@images/*": ["./src/assets/images/*"],
-      // "@icons/*": ["./src/assets/images/icons/*"],
-      // "@fonts/*": ["./src/assets/fonts/*"]
+      "@fonts/*": ["./assets/fonts/*"]
     }
   },
   "ts-node": {

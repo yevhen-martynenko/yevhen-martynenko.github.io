@@ -2,7 +2,6 @@ import path from "path";
 import type { ModuleOptions } from "webpack";
 import type { BuildOptions } from "./types/types";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { build_babel_loader } from "./babel/build_babel_loader.ts";
 import { DEFAULT_PATHS } from "./_config_.ts";
 
 
@@ -17,6 +16,7 @@ export function build_loaders(options: BuildOptions): ModuleOptions["rules"] {
                 auto: /\.module\.\w+$/,
             },
             sourceMap: true,
+            importLoaders: 2,
         },
     };
 
@@ -39,18 +39,22 @@ export function build_loaders(options: BuildOptions): ModuleOptions["rules"] {
         ],
     };
 
-    const ts_loader = {
-        test: /\.tsx?$/,
+    const presets = [
+        ["@babel/preset-env", { targets: "defaults", modules: false }],
+        "@babel/preset-typescript",
+    ];
+    const babel_loader = {
+        test: /\.(js|jsx|tsx?)$/,
         exclude: /node_modules/,
-        use: [{
-            loader: "ts-loader",
+        use: {
+            loader: "babel-loader",
             options: {
-                transpileOnly: dev_mode,
+                presets,
+                cacheDirectory: true,
+                cacheCompression: false,
             },
-        }],
+        },
     };
-
-    const babel_loader = build_babel_loader(options);
 
     const assets_loader = {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
@@ -95,7 +99,6 @@ export function build_loaders(options: BuildOptions): ModuleOptions["rules"] {
     return [
         scss_module_loader,
         scss_loader,
-        // ts_loader,
         babel_loader,
         assets_loader,
         svg_loader,
