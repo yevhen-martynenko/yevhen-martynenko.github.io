@@ -24,7 +24,7 @@ export function build_dev_server(options: BuildOptions): DevServerConfiguration 
             watch: true,
         },
         port: options.port ?? 3300,
-        open: ['/pages/index.html'],
+        open: ['/templates/index.html'],
         hot: true,
         compress: true,
         historyApiFallback: {

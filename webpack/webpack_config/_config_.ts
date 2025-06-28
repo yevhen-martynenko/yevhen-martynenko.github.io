@@ -2,7 +2,7 @@ import path from "path";
 import type { PathsConfig } from "./types/types";
 
 
-export const PAGES: string[] = ["index", "coming_soon", "portfolio", "blog", "site_map"];
+export const PAGES: string[] = ["index", "portfolio", "blog"];
 export const HTML_PATH: string = "../dist";
 
 export const COPY_PARTIALS: boolean = false;
