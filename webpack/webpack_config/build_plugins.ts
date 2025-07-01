@@ -29,10 +29,10 @@ export function build_plugins(options: BuildOptions): Configuration["plugins"] {
     );
     const copy_patterns = [
         // { from: "source", to: "dest" },
-        // { 
-        //     from: path.resolve(options.paths.src, "assets/images/"),
-        //     to: path.resolve(options.paths.output, "assets/images/"),
-        // },
+        { 
+            from: path.resolve(options.paths.src, "assets/images/"),
+            to: path.resolve(options.paths.output, "assets/images/"),
+        },
         // {
         //     from: path.resolve(options.paths.src, "assets/fonts/"),
         //     to: path.resolve(options.paths.output, "assets/fonts/"),
