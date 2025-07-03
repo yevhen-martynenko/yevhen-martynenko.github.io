@@ -1,0 +1,28 @@
+{% extends "../base.njk" %}
+
+
+{% block title %}Blog Page{% endblock %}
+{% block page_styles %}
+<link rel="stylesheet" href="../css/index.css">
+{% endblock page_styles %}
+
+
+{% block content %}
+
+<div class="floating-btn">
+  <button onclick="download_CV()">Download CV</button>
+</div>
+
+{% include "../sections/hero.html" %}
+{% include "../sections/skills.html" %}
+{% include "../sections/portfolio.html" %}
+{% include "../sections/blog.html" %}
+{% include "../sections/experience.html" %}
+{% include "../sections/contact.html" %}
+
+{% endblock %}
+
+
+{% block page_scripts %}
+<script src="../js/index.js"></script>
+{% endblock page_scripts %}
