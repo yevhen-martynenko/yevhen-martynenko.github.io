@@ -1,0 +1,41 @@
+// ----------------------------------------------
+// Colors
+// ----------------------------------------------
+$color-text: #f3f4f6;
+$color-primary: #00f5ff;
+$color-accent: #059669;
+$color-surface: #111827;
+$color-surface-muted: #1f2937;
+$color-muted: #6b7280;
+$color-secondary: #9ca3af;
+
+$color-error: #ef4444;
+$color-warning: #fbbf24;
+$color-success: #10b981;
+$color-info: #3b82f6;
+
+// ----------------------------------------------
+// Fonts
+// ----------------------------------------------
+$font-body: 'Inter', sans-serif;
+$font-heading: 'Libre Baskerville', serif;
+
+// ----------------------------------------------
+// Breakpoints
+// ----------------------------------------------
+$content-width: 1200px;
+$block-width: 900px;
+$breakpoint-xs: 480px; // Mobile Small
+$breakpoint-sm: 768px; // Tablet
+$breakpoint-md: 1024px; // Laptop
+$breakpoint-lg: 1280px; // Desktop
+$breakpoint-xl: 1536px; // XL Desktop
+
+// ----------------------------------------------
+// Misc
+// ----------------------------------------------
+$radius: 8px;
+$transition: 0.3s ease;
+$border: 1px solid $color-border;
+$border-primary: 1px solid $color-muted;
+$border-select: 1px solid $color-primary;
