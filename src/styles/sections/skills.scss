@@ -1,0 +1,150 @@
+@use "../base/variables.scss" as *;
+@use "skills.variables.scss" as *;
+@use "sass:color";
+@use "sass:map";
+@use "sass:list";
+
+#skills {
+  padding: 5rem 0;
+  background-color: $color-surface;
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+}
+
+.section-heading {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+  color: $color-accent;
+  font-family: $font-heading;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 3rem;
+    height: 0.25rem;
+    background: linear-gradient(90deg, $color-primary, $color-accent);
+    border-radius: 2rem;
+  }
+}
+
+.skill-category {
+  margin-bottom: 2rem;
+}
+
+// ----------------------------------------------
+// Skill Cards
+// ----------------------------------------------
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  .skill-card {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: $color-surface-muted;
+    border: $border;
+    border-radius: $radius;
+    transition: all $transition;
+    text-align: center;
+
+    &:hover {
+      transform: translateY(-0.25rem);
+    }
+
+    .skill-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.5rem;
+      background-size: 2rem 2rem;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .skill-name {
+      font-weight: 600;
+      color: $color-text;
+      font-size: 1rem;
+      line-height: 1.4;
+      text-align: center;
+    }
+  }
+
+  @each $name, $props in $skills {
+    .skill-card.#{$name} {
+      .skill-icon {
+        background-image: url(list.nth($props, 2));
+      }
+      &:hover {
+        border-color: list.nth($props, 1);
+        box-shadow: 0 1rem 2rem rgba(list.nth($props, 1), 0.2);
+      }
+    }
+  }
+}
+
+// ----------------------------------------------
+// Skill Badges
+// ----------------------------------------------
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  [class*="tool-badge--"] {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all $transition;
+
+    @each $type, $color in $tool-colors {
+      &.tool-badge--#{$type} {
+        background-color: color.change($color, $alpha: 0.08);
+        color: $color;
+        border: 1px solid $color;
+      }
+    }
+
+    &:hover {
+      background-color: $color-surface-muted;
+      color: $color-primary;
+      border-color: $color-primary;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// ----------------------------------------------
+// Media Queries
+// ----------------------------------------------
+@media (max-width: $breakpoint-sm) {
+  .frameworks-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .skill-tags [class*="tool-badge--"] {
+    font-size: 1.25rem;
+    padding: 0.5rem 1.5rem;
+  }
+}

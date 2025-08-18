@@ -1,0 +1,57 @@
+@use "../base/variables.scss" as *;
+
+$color-map: (
+  "native": $color-primary,
+  "c2": $color-5,
+  "c1": $color-4,
+  "b2": $color-6,
+  "b1": $color-7,
+  "a2": $color-3,
+  "a1": $color-2,
+);
+
+$skills: (
+  "python": (#3776ab, "@icons/skills/languages/python.svg"),
+  "django": (#20aa76, "@icons/skills/frameworks_libraries/django.svg"),
+  "drf": (#a30000, "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-original.svg"),
+  "flask": (#0d7962, "@icons/skills/frameworks_libraries/flask.svg"),
+  "numpy": (#013243, "@icons/skills/frameworks_libraries/numpy.svg"),
+  "pytest": (#0a9edc, "@icons/skills/frameworks_libraries/pytest.svg"),
+
+  "postgresql": (#336791, "@icons/skills/databases/postgresql.svg"),
+  "mysql": (#00758f, "@icons/skills/databases/mysql.svg"),
+  "mariadb": (#003545, "@icons/skills/databases/mariadb.svg"),
+  "sqlite": (#003b57, "@icons/skills/databases/sqlite.svg"),
+
+  "javascript": (#f7df1e, "@icons/skills/languages/js.svg"),
+  "typescript": (#3178c6, "@icons/skills/languages/ts.svg"),
+  "c": (#a8b9cc, "@icons/skills/languages/c.svg"),
+
+  "html": (#e34f26, "@icons/skills/frontend/html5.svg"),
+  "css": (#264de4, "@icons/skills/frontend/css3.svg"),
+  "sass": (#cf649a, "@icons/skills/frontend/sass.svg"),
+  "webpack": (#8dd6f9, "@icons/skills/frontend/webpack.svg"),
+
+  "docker": (#2496ed, "@icons/skills/tools/docker.svg"),
+  "nginx": (#009639, "@icons/skills/tools/nginx.svg"),
+  "git": (#f05032, "@icons/skills/tools/git.svg"),
+  "bash": (#4eaa25, "@icons/skills/tools/bash.svg"),
+  "linux": (#34be5b, "@icons/skills/tools/linux.svg"),
+  "swagger": (#85ea2d, "@icons/skills/tools/swagger.svg"),
+  "gunicorn": (#499848, "@icons/skills/tools/gunicorn.svg"),
+
+  "arch": (#1793d1, "@icons/skills/other/arch.svg"),
+  "arduino": (#00979d, "@icons/skills/other/arduino.svg"),
+  "markdown": (#000000, "@icons/skills/other/markdown.svg"),
+  "neovim": (#57a143, "@icons/skills/other/neovim.svg"),
+  "sway": (#4a90e2, "@icons/skills/other/sway.svg")
+);
+
+$tool-colors: (
+  "languages": $color-2,
+  "backend": $color-3,
+  "frontend": $color-4,
+  "tool": $color-5,
+  "databases": $color-6,
+  "misc": $color-7,
+);
