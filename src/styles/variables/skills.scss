@@ -14,7 +14,7 @@ $skills: (
   "python": (#3776ab, "@icons/skills/languages/python.svg"),
   "django": (#20aa76, "@icons/skills/frameworks_libraries/django.svg"),
   "drf": (#a30000, "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/djangorest/djangorest-original.svg"),
-  "flask": (#0d7962, "@icons/skills/frameworks_libraries/flask.svg"),
+  "flask": (#ffffff, "@icons/skills/frameworks_libraries/flask.svg"),
   "numpy": (#013243, "@icons/skills/frameworks_libraries/numpy.svg"),
   "pytest": (#0a9edc, "@icons/skills/frameworks_libraries/pytest.svg"),
 
@@ -36,7 +36,7 @@ $skills: (
   "nginx": (#009639, "@icons/skills/tools/nginx.svg"),
   "git": (#f05032, "@icons/skills/tools/git.svg"),
   "bash": (#4eaa25, "@icons/skills/tools/bash.svg"),
-  "linux": (#34be5b, "@icons/skills/tools/linux.svg"),
+  "linux": (#ffffff, "@icons/skills/tools/linux.svg"),
   "swagger": (#85ea2d, "@icons/skills/tools/swagger.svg"),
   "gunicorn": (#499848, "@icons/skills/tools/gunicorn.svg"),
 
@@ -50,8 +50,8 @@ $skills: (
 $tool-colors: (
   "languages": $color-2,
   "backend": $color-3,
-  "frontend": $color-4,
-  "tool": $color-5,
+  "tool": $color-4,
+  "frontend": $color-5,
   "databases": $color-6,
   "misc": $color-7,
 );
