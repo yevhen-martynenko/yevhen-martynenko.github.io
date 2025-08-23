@@ -11,15 +11,15 @@
 <body>
 
 {% include "../partials/header.html" %}
+{% include "../partials/messages.html" %}
 <main>
 {% block content %}{% endblock %}
 </main>
 
 {% include "../partials/footer.html" %}
 
-<script defer src="main.js"></script>
-<script defer src="runtime.js"></script>
-<script defer src="defaultVendors-src_styles_main_scss.bundle.js"></script>
+<script src="main.js"></script>
+<script src="runtime.js"></script>
 {% block page_scripts %}{% endblock page_scripts %}
 
 </body>
