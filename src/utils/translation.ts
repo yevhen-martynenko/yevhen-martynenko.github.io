@@ -43,6 +43,10 @@ export function init_translations(options: translation_options) {
     }
   }
 
+  function getNested(obj: any, key: string): any {
+    return key.split(".").reduce((o, k) => (o ? o[k] : undefined), obj);
+  }
+
   async function set_language(lang: string) {
     if (!translations[lang]) {
       await load_translations(lang);
@@ -50,6 +54,25 @@ export function init_translations(options: translation_options) {
     current_lang = lang;
     localStorage.setItem("language", current_lang);
     update_display();
+    translate_page();
+  }
+
+  function translate_page() {
+    const elements = document.querySelectorAll("[data-translate]");
+    const current_translations = translations[current_lang] || {};
+
+    elements.forEach((element) => {
+      const key = element.getAttribute("data-translate");
+      const value = key ? getNested(current_translations, key) : null;
+
+      if (value) {
+        if (element instanceof HTMLInputElement && element.type !== "button" && element.type !== "submit") {
+          element.placeholder = value;
+        } else {
+          element.textContent = value;
+        }
+      }
+    });
   }
 
   function setup_language_button() {
