@@ -1,0 +1,8 @@
+@use "../base/variables.scss" as *;
+
+$project-colors: (
+  "work": $color-5,
+  "cli": $color-6,
+  "landing": $color-7,
+  "app": $color-8,
+);
