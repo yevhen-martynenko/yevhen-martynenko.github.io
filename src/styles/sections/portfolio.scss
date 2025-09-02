@@ -8,6 +8,15 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 400px) {
+    gap: 1rem;
+  }
 }
 
 // ----------------------------------------------
@@ -19,6 +28,11 @@
   justify-content: center;
   gap: 1rem;
   margin-bottom: 3rem;
+
+  @media (max-width: $breakpoint-sm) {
+    margin-bottom: 2rem;
+    margin-top: -1rem;
+  }
 
   .filter-btn {
     padding: 0.75rem 1.5rem;
@@ -42,6 +56,10 @@
       background-color: $color-primary;
       border-color: $color-primary;
       color: $color-surface;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 1.2rem;
     }
   }
 }

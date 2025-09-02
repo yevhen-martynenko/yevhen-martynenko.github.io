@@ -72,10 +72,11 @@
   }
 
   &__name {
-    font-family: $font-body;
+    font-family: $font-mono;
     font-weight: 600;
     color: $color-text;
-    font-size: 1rem;
+    font-size: 1.15rem;
+    letter-spacing: 0.075rem;
     line-height: 1.4;
     text-align: center;
   }
@@ -91,7 +92,8 @@
     [class*="badge--"] {
       padding: 0.5rem 1.5rem;
       border-radius: 0.5rem;
-      font-family: $font-body;
+      font-family: $font-mono;
+      letter-spacing: 0.05rem;
       font-size: 1rem;
       font-weight: 500;
       transition: all $transition;
@@ -158,10 +160,10 @@
     .level-badge {
       padding: 0.5rem 1rem;
       border-radius: calc($radius * 0.75);
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      font-family: $font-body;
-      letter-spacing: 0.025em;
+      font-family: $font-mono;
+      letter-spacing: 0.05em;
 
       @each $class, $base-color in $color-map {
         &.#{$class} {
@@ -176,12 +178,13 @@
   &__name {
     font-size: 1.25rem;
     font-weight: 600;
-    font-family: $font-body;
+    font-family: $font-mono;
     color: $color-text;
+    letter-spacing: 0.075rem;
   }
 
   &__note {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: $font-body;
     color: $color-muted;
     font-style: italic;
