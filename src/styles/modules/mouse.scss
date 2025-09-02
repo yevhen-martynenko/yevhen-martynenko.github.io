@@ -1,0 +1,113 @@
+@use "../base/variables.scss" as *;
+
+.mouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid $color-secondary;
+  border-radius: 14px;
+  position: relative;
+  margin-bottom: 4px;
+
+  @media (max-width: $breakpoint-sm) {
+    width: 36px;
+    height: 60px;
+    border-radius: 21px;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    width: 36px;
+    height: 60px;
+    border-radius: 21px;
+  }
+}
+
+.wheel {
+  width: 4px;
+  height: 6px;
+  background: $color-secondary;
+  border-radius: 2px;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: wheelMove 1.2s infinite;
+
+  @media (max-width: $breakpoint-sm) {
+    width: 6px;
+    height: 9px;
+    top: 9px;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    width: 6px;
+    height: 9px;
+    top: 9px;
+  }
+}
+
+.scroll {
+  &-text {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1.1rem;
+
+    @media (max-width: $breakpoint-md) {
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 1.5rem;
+      letter-spacing: 0.15rem;
+    }
+  }
+
+  &-indicator {
+    position: fixed;
+    bottom: 2.5em;
+    right: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: monospace;
+    font-size: 1.15rem;
+    color: $color-secondary;
+    opacity: 0.7;
+    z-index: 1000;
+
+    @media (max-width: $breakpoint-md) {
+      bottom: 2em;
+      right: 3em;
+      font-size: 1rem;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      bottom: 1em;
+      right: 1em;
+      font-size: 1.725rem;
+    }
+
+    @media (max-width: $breakpoint-xs) {
+      bottom: 0.5em;
+      right: 0.5em;
+      font-size: 1.725rem;
+    }
+
+    @media (max-width: 320px) {
+      bottom: 0.3em;
+      right: 0.3em;
+      font-size: 1.725rem;
+    }
+
+    @media (max-height: 500px) and (orientation: landscape) {
+      bottom: 0.2em;
+      right: 0.5em;
+      font-size: 1.65rem;
+    }
+
+    &.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s;
+    }
+  }
+}
