@@ -2,25 +2,54 @@
   <nav>
     <div class="nav-content">
       <div class="logo">YM</div>
-      <div class="nav-center">
-        <div class="nav-links">
-          <a href="#hero" class="nav-link" data-translate="nav.home" aria-label="Homepage">Home</a>
-          <a href="#experience" class="nav-link" data-translate="nav.experience" aria-label="Experience">Experience</a>
-          <a href="#skills" class="nav-link" data-translate="nav.skills" aria-label="Skills">Skills</a>
-          <a href="#portfolio" class="nav-link" data-translate="nav.portfolio" aria-label="Portfolio">Portfolio</a>
-          <a href="#blog" class="nav-link" data-translate="nav.blog" aria-label="Blog">Blog</a>
-          <a href="#contact" class="nav-link" data-translate="nav.contact" aria-label="Contact">Contact</a>
-        </div>
+
+      <!-- Desktop Navigation -->
+      <div class="nav-links">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
+
+      <!-- Download CV Button -->
+      <button id="download-cv-mobile" class="download-cv-btn btn btn--mobile is-hidden">
+        <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15V19A2 2 0 0119 21H5A2 2 0 013 19V15M7 10L12 15L17 10M12 15V3" />
+        </svg>
+        <span class="btn__text" data-translate="hero.cv_btn">Download CV</span>
+      </button>
+
+      <!-- Navigation Controls -->
       <div class="nav-controls">
-        <button class="language-switcher" id="language-toggle" aria-label="Toggle language">
+        <button class="language-switcher" id="language-toggle">
           <span id="current-lang">EN</span>
         </button>
-        <div class="mobile-menu" id="mobile-menu-btn" aria-label="Toggle mobile menu">
-          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </div>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <div class="mobile-links">
+        <a href="#hero" class="mobile-nav-link">Home</a>
+        <a href="#experience" class="mobile-nav-link">Experience</a>
+        <a href="#skills" class="mobile-nav-link">Skills</a>
+        <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
+        <a href="#blog" class="mobile-nav-link">Blog</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+      </div>
+
+      <div class="mobile-menu-bottom">
+        <button class="btn btn--secondary language-switcher" id="mobile-language-toggle">
+          <span id="mobile-current-lang">EN</span>
+        </button>
       </div>
     </div>
   </nav>
