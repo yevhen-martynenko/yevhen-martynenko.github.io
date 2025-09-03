@@ -69,4 +69,14 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-import "@utils/mobile_menu.ts";
+// ----------------------------------------------
+// Mobile (burger) menu
+// ----------------------------------------------
+import { init_mobile_menu } from "@utils/mobile_menu.ts";
+
+init_mobile_menu({
+  menu_btn_id: "mobile-menu-btn",
+  mobile_menu_id: "mobile-menu",
+  nav_link_selector: ".mobile-nav-link",
+  breakpoint: 768,
+});
