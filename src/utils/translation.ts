@@ -5,14 +5,13 @@ export interface translation_data {
 export interface translation_options {
   languages: string[];
   default_lang?: string;
-  button_id: string;
-  display_id: string;
+  button_ids: string[];
+  display_ids: string[];
 }
 
 // main function
 export function init_translations(options: translation_options) {
-  const { languages, default_lang = "en", button_id, display_id } = options;
-
+  const { languages, default_lang = "en", button_ids, display_ids } = options;
   let current_lang = localStorage.getItem("language") || default_lang;
   const translations: { [lang: string]: translation_data } = {};
 
@@ -31,16 +30,18 @@ export function init_translations(options: translation_options) {
   }
 
   function update_display() {
-    const current_lang_span = document.getElementById(display_id);
-    if (current_lang_span) {
-      const lang_map: Record<string, string> = {
-        en: "EN",
-        ua: "UA",
-        es: "ES",
-        ro: "RO",
-      };
-      current_lang_span.textContent = lang_map[current_lang] || current_lang.toUpperCase();
-    }
+    display_ids.forEach((id) => {
+      const span = document.getElementById(id);
+      if (span) {
+        const lang_map: Record<string, string> = {
+          en: "EN",
+          ua: "UA",
+          es: "ES",
+          ro: "RO",
+        };
+        span.textContent = lang_map[current_lang] || current_lang.toUpperCase();
+      }
+    });
   }
 
   function getNested(obj: any, key: string): any {
@@ -75,20 +76,22 @@ export function init_translations(options: translation_options) {
     });
   }
 
-  function setup_language_button() {
-    const language_toggle = document.getElementById(button_id);
-    if (language_toggle) {
-      language_toggle.addEventListener("click", async () => {
-        const current_index = languages.indexOf(current_lang);
-        const next_index = (current_index + 1) % languages.length;
-        await set_language(languages[next_index]);
-      });
-    }
+  function setup_language_buttons() {
+    button_ids.forEach((id) => {
+      const btn = document.getElementById(id);
+      if (btn) {
+        btn.addEventListener("click", async () => {
+          const current_index = languages.indexOf(current_lang);
+          const next_index = (current_index + 1) % languages.length;
+          await set_language(languages[next_index]);
+        });
+      }
+    });
   }
 
   document.addEventListener("DOMContentLoaded", async () => {
     await set_language(current_lang);
-    setup_language_button();
+    setup_language_buttons();
   });
 
   return {
