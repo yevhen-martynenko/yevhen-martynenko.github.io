@@ -1,8 +1,9 @@
 // interfaces
-export interface translation_data {
+export interface TranslationData {
   [key: string]: any;
 }
-export interface translation_options {
+
+export interface TranslationOptions {
   languages: string[];
   default_lang?: string;
   button_ids: string[];
@@ -10,10 +11,10 @@ export interface translation_options {
 }
 
 // main function
-export function init_translations(options: translation_options) {
+export function init_translations(options: TranslationOptions) {
   const { languages, default_lang = "en", button_ids, display_ids } = options;
   let current_lang = localStorage.getItem("language") || default_lang;
-  const translations: { [lang: string]: translation_data } = {};
+  const translations: { [lang: string]: TranslationData } = {};
 
   async function load_translations(lang: string): Promise<void> {
     try {
@@ -36,7 +37,6 @@ export function init_translations(options: translation_options) {
         const lang_map: Record<string, string> = {
           en: "EN",
           ua: "UA",
-          es: "ES",
           ro: "RO",
         };
         span.textContent = lang_map[current_lang] || current_lang.toUpperCase();
@@ -68,6 +68,8 @@ export function init_translations(options: translation_options) {
 
       if (value) {
         if (element instanceof HTMLInputElement && element.type !== "button" && element.type !== "submit") {
+          element.placeholder = value;
+        } else if (element instanceof HTMLTextAreaElement) {
           element.placeholder = value;
         } else {
           element.textContent = value;

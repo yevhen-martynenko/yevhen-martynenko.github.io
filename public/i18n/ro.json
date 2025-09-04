@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "experience": "Experiență",
+    "skills": "Competențe",
+    "portfolio": "Portofoliu",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Disponibil pentru muncă",
+    "unavailable": "Indisponibil pentru muncă",
+    "greeting": "Salut, sunt",
+    "name": "Yevhen",
+    "role": "Dezvoltator Backend",
+    "description": "Dezvoltator backend specializat în Python, Django și REST API. Scriu cod curat, sigur și scalabil și îmi place să transform ideile în aplicații funcționale. Când nu programez, probabil repar sau modific configurația mea Linux.",
+    "contact_btn": "Contactează-mă",
+    "cv_btn": "Descarcă CV",
+    "location": "Locație: Chișinău, Moldova",
+    "scroll": "derulează"
+  },
+  "experience": {
+    "title": "Experiență",
+    "1": {
+      "position": "Full Stack Developer",
+      "company": "Proiect Personal",
+      "period": "Aprilie 2025 - Prezent",
+      "achievements": {
+        "1": "Am dezvoltat o aplicație web bazată pe Django cu REST API folosind Django REST Framework.",
+        "2": "Am implementat frontend-ul folosind TypeScript, HTML și SCSS, integrat cu Webpack.",
+        "3": "Am scris teste complete pentru toate endpoint-urile API folosind PyTest, asigurând fiabilitatea și acoperirea codului.",
+        "4": "Am implementat și testat aplicația pe o mașină virtuală, evaluând securitatea și performanța.",
+        "5": "Am configurat medii de dezvoltare și testare pentru un flux de lucru consistent."
+      }
+    },
+    "2": {
+      "position": "Backend Developer",
+      "company": "Team Challenge",
+      "period": "Martie 2025 - Iunie 2025",
+      "achievements": {
+        "1": "Am dezvoltat API-uri RESTful pentru produse, incluzând operații CRUD, căutare, sortare, filtrare și paginare.",
+        "2": "Am implementat autentificarea și gestionarea utilizatorilor (înregistrare, login, logout, profiluri) folosind JWT și Google Login.",
+        "3": "Am creat documentația API folosind OpenAPI (Swagger).",
+        "4": "Am automatizat sarcini folosind scripturi personalizate Bash și Python.",
+        "5": "Am proiectat și optimizat structuri de baze de date MySQL."
+      }
+    },
+    "3": {
+      "position": "Stagiar în Securitate Cibernetică",
+      "company": "Departamentul de Poliție Cibernetică al Ucrainei",
+      "period": "Februarie 2024 - Iunie 2024",
+      "achievements": {
+        "1": "Am aplicat tehnici de securitate pentru aplicații web sub îndrumarea ofițerilor seniori, testând vulnerabilitățile.",
+        "2": "Am colaborat cu un mentor pentru a explora abordări moderne de securitate web în scopuri academice.",
+        "3": "Am dezvoltat o aplicație web bazată pe Django pentru proiectul meu de diplomă și am evaluat-o pentru vulnerabilități folosind instrumente standard de securitate.",
+        "4": "Am observat operațiuni și rețineri pe teren, obținând experiență practică în practicile forțelor de ordine."
+      }
+    }
+  },
+  "education": {
+    "title": "Educație",
+    "1": {
+      "degree": "Licență",
+      "field": "Știința Calculatoarelor",
+      "university": "Universitatea Națională Politehnică din Odesa"
+    },
+    "2": {
+      "degree": "Licență Junior",
+      "field": "Tehnologii Informaționale",
+      "university": "Universitatea de Stat ITT"
+    }
+  },
+  "skills": {
+    "title": "Competențe",
+    "technical": "Competențe Tehnice",
+    "languages": "Limbi",
+    "lang": {
+      "english": "Engleză",
+      "romanian": "Română",
+      "ukrainian": "Ucraineană",
+      "russian": "Rusă",
+      "spanish": "Spaniolă",
+      "icelandic": "Islandeză"
+    },
+    "level": {
+      "c2": "C2 Expert",
+      "c1": "C1 Avansat",
+      "b2": "B2 Intermediar Superior",
+      "b1": "B1 Intermediar",
+      "a2": "A2 Începător",
+      "a1": "A1 Începător",
+      "native": "Nativ"
+    },
+    "note": {
+      "english": "Competență profesională de lucru, documentație tehnică",
+      "romanian": "Înțelegere de bază, competență de lucru limitată"
+    }
+  },
+  "portfolio": {
+    "title": "Portofoliu",
+    "filter": {
+      "all": "Toate",
+      "work": "Lucrări",
+      "cli": "Instrumente CLI",
+      "landing": "Pagini de destinație",
+      "apps": "Aplicații"
+    },
+    "1": {
+      "title": "Site Personal Portofoliu",
+      "description": "Site personal construit cu HTML, SCSS și TypeScript."
+    },
+    "2": {
+      "title": "Aplicație pentru Rețete",
+      "description": "Aplicație web pentru crearea și gestionarea rețetelor. Construită cu Django și Django REST Framework.",
+      "note": "Proiectul nu este finalizat încă."
+    },
+    "3": {
+      "title": "Aplicație Django pentru Sondaje",
+      "description": "Aplicație web pentru crearea și votarea sondajelor. Interfață prietenoasă, parte din lucrarea de diplomă."
+    },
+    "4": {
+      "title": "Image Sorter",
+      "description": "Instrument de gestionare a imaginilor în terminal folosind Python și curses. Sortează, mută, redenumește și șterge imagini cu comenzi rapide de la tastatură."
+    },
+    "5": {
+      "title": "Tkinter Password Generator",
+      "description": "Aplicație simplă Tkinter pentru generarea de parole sigure printr-o interfață grafică."
+    }
+  },
+  "contact": {
+    "title": "Contactează-mă",
+    "email": "Adresă de email",
+    "message": "Mesaj",
+    "submit": "Trimite mesaj",
+    "social": {
+      "gmail": "yevhen.martynenko.v@gmail.com",
+      "proton": "yevhen.martynenko@proton.me",
+      "github": "Repository Cod",
+      "linkedin": "Rețea Profesională",
+      "medium": "Articole Tehnice"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Yevhen Martynenko",
+    "last_updated": "Ultima actualizare: Septembrie 2025"
+  }
+}
