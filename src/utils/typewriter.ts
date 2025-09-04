@@ -1,18 +1,21 @@
+// interfaces
+export interface TypewriterSequenceStep {
+  action: "type" | "backspace";
+  value?: string;
+  count?: number;
+}
+export interface TypewriterOptions {
+  cursor?: boolean;
+}
+
+// main function
 export function start_typewriter(
   element: HTMLElement,
-  sequence: Array<{ action: string; value?: string; count?: number }>,
-  options: { cursor?: boolean } = {}
+  sequence: Array<TypewriterSequenceStep>,
+  options: TypewriterOptions = {}
 ): Promise<void> {
   return new Promise((resolve) => {
     element.innerHTML = "// ";
-
-    const style = document.createElement("style");
-    style.textContent = `
-      .cursor {
-        animation: blink 1s infinite;
-      }
-    `;
-    document.head.appendChild(style);
 
     let step = 0;
     let char_index = 0;
@@ -26,6 +29,7 @@ export function start_typewriter(
     const type_next = () => {
       if (!current) {
         if (!options.cursor) cursor.remove();
+        else make_cursor_blink(cursor);
         resolve();
         return;
       }
@@ -58,9 +62,6 @@ export function start_typewriter(
   });
 }
 
-function add_cursor(element: HTMLElement): void {
-  const cursor = document.createElement("span");
-  cursor.textContent = "|";
-  cursor.style.animation = "blink 2s steps(1) infinite";
-  element.appendChild(cursor);
+function make_cursor_blink(cursor: HTMLElement): void {
+  cursor.style.animation = "blink 1.5s steps(1) infinite";
 }

@@ -44,7 +44,7 @@ export function init_translations(options: TranslationOptions) {
     });
   }
 
-  function getNested(obj: any, key: string): any {
+  function get_nested(obj: any, key: string): any {
     return key.split(".").reduce((o, k) => (o ? o[k] : undefined), obj);
   }
 
@@ -64,7 +64,7 @@ export function init_translations(options: TranslationOptions) {
 
     elements.forEach((element) => {
       const key = element.getAttribute("data-translate");
-      const value = key ? getNested(current_translations, key) : null;
+      const value = key ? get_nested(current_translations, key) : null;
 
       if (value) {
         if (element instanceof HTMLInputElement && element.type !== "button" && element.type !== "submit") {

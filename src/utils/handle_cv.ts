@@ -1,5 +1,12 @@
-export function handle_cv(file_path: string, options?: { mode?: "open" | "download" | "both"; base_name?: string }) {
-  const { mode = "open", base_name = "document" } = options || {};
+// interfaces
+export interface CVHandlerOptions {
+  mode?: "open" | "download" | "both";
+  base_name?: string;
+}
+
+// main function
+export function handle_cv(file_path: string, options: CVHandlerOptions = {}) {
+  const { mode = "open", base_name = "document" } = options;
 
   const download_pdf = () => {
     const link = document.createElement("a");

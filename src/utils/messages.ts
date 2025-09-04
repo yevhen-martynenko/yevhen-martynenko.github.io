@@ -1,3 +1,4 @@
+// interfaces
 type MessageType = "success" | "error" | "warning" | "info";
 
 interface StoredMessage {
@@ -6,6 +7,7 @@ interface StoredMessage {
   timestamp: number;
 }
 
+// functions
 function get_container(container_id: string): HTMLElement {
   let container = document.getElementById(container_id);
   if (!container) {
@@ -20,7 +22,7 @@ function get_container(container_id: string): HTMLElement {
 export function show_message(
   text: string,
   type: MessageType = "info",
-  duration: number = 50000,
+  duration: number = 3000,
   container_id: string = "messages",
   animation_duration: number = 300
 ): void {
@@ -65,5 +67,5 @@ function get_stored_messages(): StoredMessage[] {
 }
 
 export function show_stored_messages(container_id: string = "messages", animation_duration: number = 300): void {
-  get_stored_messages().forEach((msg) => show_message(msg.message, msg.type, 4000, container_id, animation_duration));
+  get_stored_messages().forEach((msg) => show_message(msg.message, msg.type, 3000, container_id, animation_duration));
 }
