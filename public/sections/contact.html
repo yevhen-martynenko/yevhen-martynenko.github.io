@@ -1,7 +1,7 @@
 <section id="contact" class="section">
   <div class="container">
     <h2 class="section__title">
-      <a href="#contact">Get In Touch</a>
+      <a href="#contact" data-translate="contact.title">Get In Touch</a>
     </h2>
 
     <div class="contact">
@@ -9,25 +9,27 @@
       <div class="contact__form-wrapper">
         <form class="contact__form" id="contact_form" action="https://formspree.io/f/xeolqydk" method="POST">
           <div class="contact__field">
-            <label for="email" class="contact__label">Email Address</label>
+            <label for="email" class="contact__label" data-translate="contact.email.label">Email Address</label>
             <input
               type="email"
               id="email"
               name="email"
               class="contact__input"
               placeholder="email@domain.com"
+              data-translate="contact.email.placeholder"
               required
               aria-describedby="email-error"
             />
             <span class="contact__error" id="email-error" role="alert"></span>
           </div>
           <div class="contact__field">
-            <label for="message" class="contact__label">Message</label>
+            <label for="message" class="contact__label" data-translate="contact.message.label">Message</label>
             <textarea
               id="message"
               name="message"
               class="contact__textarea"
               placeholder="Your message here..."
+              data-translate="contact.message.placeholder"
               required
               rows="6"
               aria-describedby="message-error"
@@ -35,7 +37,7 @@
             <span class="contact__error" id="message-error" role="alert"></span>
           </div>
           <button type="submit" class="contact__submit">
-            <span class="contact__submit-text">Send Message</span>
+            <span class="contact__submit-text" data-translate="contact.submit">Send Message</span>
             <span class="contact__submit-icon" aria-hidden="true">
               <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -60,7 +62,7 @@
             </div>
             <div class="contact__social-info">
               <span class="contact__social-name">Gmail</span>
-              <span class="contact__social-handle">yevhen.martynenko.v@gmail.com</span>
+              <span class="contact__social-handle" data-translate="contact.social.gmail">yevhen.martynenko.v@gmail.com</span>
             </div>
             <div class="contact__social-external" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
@@ -75,7 +77,7 @@
             </div>
             <div class="contact__social-info">
               <span class="contact__social-name">ProtonMail</span>
-              <span class="contact__social-handle">yevhen.martynenko@proton.me</span>
+              <span class="contact__social-handle" data-translate="contact.social.proton">yevhen.martynenko@proton.me</span>
             </div>
             <div class="contact__social-external" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
@@ -96,7 +98,7 @@
             </div>
             <div class="contact__social-info">
               <span class="contact__social-name">GitHub</span>
-              <span class="contact__social-handle">Code Repository</span>
+              <span class="contact__social-handle" data-translate="contact.social.github">Code Repository</span>
             </div>
             <div class="contact__social-external" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
@@ -117,7 +119,7 @@
             </div>
             <div class="contact__social-info">
               <span class="contact__social-name">LinkedIn</span>
-              <span class="contact__social-handle">Professional Network</span>
+              <span class="contact__social-handle" data-translate="contact.social.linkedin">Professional Network</span>
             </div>
             <div class="contact__social-external" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
@@ -138,7 +140,7 @@
             </div>
             <div class="contact__social-info">
               <span class="contact__social-name">Medium</span>
-              <span class="contact__social-handle">Technical Writing</span>
+              <span class="contact__social-handle" data-translate="contact.social.medium">Technical Writing</span>
             </div>
             <div class="contact__social-external" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="currentColor">
