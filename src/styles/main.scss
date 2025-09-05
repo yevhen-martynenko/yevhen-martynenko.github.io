@@ -1,6 +1,16 @@
 @use "base/reset.scss" as *;
 @use "base/variables.scss" as *;
+@use "base/typography.scss" as *;
+@use "base/mixins.scss" as *;
+@use "base/animations.scss" as *;
 
+@use "base/globals.scss" as *;
+@use "modules/header.scss" as *;
+@use "modules/footer.scss" as *;
+
+// ----------------------------------------------
+// Global
+// ----------------------------------------------
 body {
   font-family: $font-body;
   background-color: $color-surface;
@@ -19,124 +29,63 @@ body {
   }
 }
 
-.text-secondary {
-  color: $color-secondary;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
 // ----------------------------------------------
-// Header
+// Section
 // ----------------------------------------------
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: $color-surface;
-  border-bottom: $border-primary;
-  z-index: 999;
-  padding: 1rem 0;
+.section {
+  padding: 5rem 0;
 
-  .nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: $content-width;
-    margin: 0 auto;
-    padding: 0 1rem;
+  &:nth-of-type(odd) {
+    background-color: $color-surface;
 
-    .logo {
-      font-size: 1.75rem;
-      font-weight: bold;
-      color: $color-primary;
-    }
-
-    .nav-center {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-links {
-      font-size: 1.2rem;
-      display: flex;
-      gap: 2.25rem;
-
-      .nav-link {
-        color: $color-text;
-        text-decoration: none;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: $color-primary;
-        }
-
-        &.active {
-          color: $color-primary;
-        }
-      }
-    }
-
-    .nav-controls {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-
-      .theme-switcher,
-      .language-switcher {
-        background: none;
-        border: $border-primary;
-        color: $color-text;
-        padding: 0.5rem;
-        border-radius: 0.25rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-
-        &:hover {
-          border-color: $color-primary;
-          color: $color-primary;
-        }
-      }
-    }
-
-    .mobile-menu {
-      display: none;
-      cursor: pointer;
-      color: $color-text;
-    }
-  }
-}
-
-// ----------------------------------------------
-// Footer
-// ----------------------------------------------
-footer {
-  background-color: $color-surface-muted;
-  border-top: $border-primary;
-  padding: 2rem 1rem;
-  text-align: center;
-
-  .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 1rem;
-
-    a {
-      color: $color-secondary;
-      text-decoration: none;
-      transition: color 0.3s ease;
-
-      &:hover {
-        color: $color-primary;
-      }
+    .section__title {
+      @include gradient($color-accent, $color-primary);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 
-  .footer-last-updated {
-    color: $color-muted;
-    font-size: 0.95rem;
+  &:nth-of-type(even) {
+    background-color: $color-surface-muted;
+
+    .section__title {
+      @include gradient($color-primary, $color-accent);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: $font-heading;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+  }
+
+  &__heading {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+    color: $color-accent;
+    font-family: $font-heading;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.33rem;
+      left: 0;
+      width: 4rem;
+      height: 0.25rem;
+      @include gradient($color-primary, $color-accent, 90deg);
+      border-radius: 2rem;
+    }
   }
 }
