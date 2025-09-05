@@ -129,8 +129,14 @@
   },
   "contact": {
     "title": "Зв’язатися",
-    "email": "Електронна адреса",
-    "message": "Повідомлення",
+    "email": {
+      "label": "Електронна адреса",
+      "placeholder": "email@domain.com"
+    },
+    "message": {
+      "label": "Повідомлення",
+      "placeholder": "Ваше повідомлення тут..."
+    },
     "submit": "Надіслати",
     "social": {
       "gmail": "yevhen.martynenko.v@gmail.com",

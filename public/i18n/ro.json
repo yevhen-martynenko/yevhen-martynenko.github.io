@@ -129,8 +129,14 @@
   },
   "contact": {
     "title": "Contactează-mă",
-    "email": "Adresă de email",
-    "message": "Mesaj",
+    "email": {
+      "label": "Adresă de email",
+      "placeholder": "email@domeniu.com"
+    },
+    "message": {
+      "label": "Mesaj",
+      "placeholder": "Mesajul tău aici..."
+    },
     "submit": "Trimite mesaj",
     "social": {
       "gmail": "yevhen.martynenko.v@gmail.com",

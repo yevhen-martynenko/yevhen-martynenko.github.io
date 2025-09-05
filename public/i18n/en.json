@@ -129,8 +129,14 @@
   },
   "contact": {
     "title": "Get In Touch",
-    "email": "Email Address",
-    "message": "Message",
+    "email": {
+      "label": "Email Address",
+      "placeholder": "email@domain.com"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Your message here..."
+    },
     "submit": "Send Message",
     "social": {
       "gmail": "yevhen.martynenko.v@gmail.com",
