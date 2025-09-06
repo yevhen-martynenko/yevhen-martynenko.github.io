@@ -1,13 +1,13 @@
 {
-  "name": "personal-website",
+  "name": "yevhen-martynenko.github-io",
   "version": "1.0.0",
   "description": "Personal website on github.io",
   "main": "app.js",
   "scripts": {
     "build": "webpack",
     "build:dev": "webpack --env mode=development",
-    "build:dev:log": "webpack --env mode=development --env logging=true",
     "build:prod": "webpack --env mode=production",
+    "build:prod:log": "webpack --env mode=production --env logging=true",
     "build:serve": "webpack serve --env mode=development"
   },
   "keywords": [],
@@ -15,9 +15,11 @@
   "license": "ISC",
   "type": "module",
   "devDependencies": {
-    "@babel/core": "^7.27.1",
+    "@babel/core": "^7.28.3",
     "@babel/preset-env": "^7.27.2",
     "@babel/preset-typescript": "^7.27.1",
+    "@types/node": "^24.3.0",
+    "@types/webpack": "^5.28.5",
     "@types/webpack-bundle-analyzer": "^4.7.0",
     "babel-loader": "^10.0.0",
     "clean-webpack-plugin": "^4.0.0",
@@ -25,17 +27,21 @@
     "css-loader": "^7.1.2",
     "fork-ts-checker-webpack-plugin": "^9.1.0",
     "html-loader": "^5.1.0",
-    "html-webpack-plugin": "^5.6.3",
-    "mini-css-extract-plugin": "^2.9.2",
+    "html-webpack-plugin": "^5.6.4",
+    "mini-css-extract-plugin": "^2.9.4",
     "null-loader": "^4.0.1",
     "nunjucks": "^3.2.4",
     "nunjucks-webpack-loader": "^1.0.8",
-    "sass": "^1.89.0",
+    "package.json": "^0.0.0",
+    "sass": "^1.90.0",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
-    "webpack": "^5.99.8",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "webpack": "^5.101.2",
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.1"
+    "webpack-dev-server": "^5.2.2"
   }
 }
