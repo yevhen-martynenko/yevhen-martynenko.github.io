@@ -5,6 +5,7 @@
 @use "base/animations.scss" as *;
 
 @use "base/globals.scss" as *;
+@use "modules/animations-init.scss" as *;
 @use "modules/header.scss" as *;
 @use "modules/footer.scss" as *;
 
@@ -12,6 +13,8 @@
 // Global
 // ----------------------------------------------
 body {
+  width: 100%;
+  overflow-x: hidden;
   font-family: $font-body;
   background-color: $color-surface;
   color: $color-text;
@@ -19,6 +22,7 @@ body {
 }
 
 .container {
+  width: 100%;
   max-width: $content-width;
   margin: 0 auto;
   padding: 0 1rem;
@@ -33,6 +37,7 @@ body {
 // Section
 // ----------------------------------------------
 .section {
+  width: 100%;
   padding: 5rem 0;
 
   &:nth-of-type(odd) {

@@ -1,0 +1,11 @@
+body:not(.animations-loaded) .hero__status,
+body:not(.animations-loaded) .hero__title,
+body:not(.animations-loaded) .hero__subtitle,
+body:not(.animations-loaded) .hero__description,
+body:not(.animations-loaded) .hero__actions,
+body:not(.animations-loaded) .terminal,
+body:not(.animations-loaded) .scroll-indicator,
+body:not(.animations-loaded) .hero__social-link,
+body:not(.animations-loaded) .hero__location {
+  opacity: 0;
+}

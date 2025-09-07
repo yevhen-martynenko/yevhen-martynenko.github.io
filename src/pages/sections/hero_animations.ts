@@ -1,13 +1,17 @@
+import { MOBILE_MAX_WIDTH } from "@pages/index.ts";
 import { BaseAnimator } from "@utils/abstract_classes.ts";
 
 export class HeroAnimator extends BaseAnimator {
   private animated = false;
+  private is_mobile = window.innerWidth <= MOBILE_MAX_WIDTH;
 
   constructor() {
     super("#hero");
   }
 
   protected add_styles(): void {
+    this.is_mobile = window.innerWidth <= MOBILE_MAX_WIDTH;
+
     // Hide hero status
     const status = document.querySelector(".hero__status");
     if (status) {
@@ -22,7 +26,7 @@ export class HeroAnimator extends BaseAnimator {
     if (title) {
       const element = title as HTMLElement;
       element.style.opacity = "0";
-      element.style.transform = "translateX(-30px)";
+      element.style.transform = this.is_mobile ? "translateY(-30px)" : "translateX(-30px)";
       element.style.transition = "all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
     }
 
@@ -31,7 +35,7 @@ export class HeroAnimator extends BaseAnimator {
     if (subtitle) {
       const element = subtitle as HTMLElement;
       element.style.opacity = "0";
-      element.style.transform = "translateX(-35px)";
+      element.style.transform = this.is_mobile ? "translateY(-25px)" : "translateX(-35px)";
       element.style.transition = "all 0.6s ease";
     }
 
@@ -40,7 +44,7 @@ export class HeroAnimator extends BaseAnimator {
     if (description) {
       const element = description as HTMLElement;
       element.style.opacity = "0";
-      element.style.transform = "translateX(-50px)";
+      element.style.transform = this.is_mobile ? "translateY(30px)" : "translateX(-50px)";
       element.style.transition = "all 0.6s ease";
     }
 
@@ -66,7 +70,7 @@ export class HeroAnimator extends BaseAnimator {
     if (terminal) {
       const element = terminal as HTMLElement;
       element.style.opacity = "0";
-      element.style.transform = "translateX(60px)";
+      element.style.transform = this.is_mobile ? "translateY(40px)" : "translateX(60px)";
       element.style.transition = "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
     }
 
@@ -81,7 +85,10 @@ export class HeroAnimator extends BaseAnimator {
   }
 
   protected setup_animations(): void {
-    this.observer = new IntersectionObserver((entries) => this.handle_intersection(entries), { threshold: 0.2 });
+    this.observer = new IntersectionObserver(
+      (entries) => this.handle_intersection(entries), 
+      { threshold: 0.2 }
+    );
     if (this.target) {
       this.observer.observe(this.target);
     }
@@ -98,13 +105,12 @@ export class HeroAnimator extends BaseAnimator {
 
   private trigger_animations(): void {
     this.animate_element(".hero__status", 200, "1", "translateY(0)", 600);
-    this.animate_element(".hero__title", 400, "1", "translateX(0)", 700);
-    this.animate_element(".hero__subtitle", 600, "1", "translateX(0)", 600);
+    this.animate_element(".hero__title", 400, "1", this.is_mobile ? "translateY(0)" : "translateX(0)", 700);
+    this.animate_element(".hero__subtitle", 600, "1", this.is_mobile ? "translateY(0)" : "translateX(0)", 600);
     this.animate_element(".hero__description", 800, "1", "translateY(0)", 600);
     this.animate_element(".hero__actions", 1000, "1", "translateY(0)", 700);
-    this.animate_element(".terminal", 600, "1", "translateX(0)", 800);
+    this.animate_element(".terminal", 600, "1", this.is_mobile ? "translateY(0)" : "translateX(0)", 800);
     this.animate_element(".scroll-indicator", 1600, "1", "translateY(0)", 600);
-
     this.animate_elements(".hero__social-link, .hero__location", 1200, 80, "1", "translateY(0)", 500);
   }
 }
