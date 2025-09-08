@@ -1,0 +1,91 @@
+@use "../base/variables.scss" as *;
+@use "../base/animations.scss" as *;
+@use "../base/mixins.scss" as *;
+@use "../base/globals.scss" as *;
+
+footer {
+  background-color: $color-surface-muted;
+  border-top: $border-primary;
+  padding: 2rem 1rem;
+  text-align: center;
+
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+
+  &.animate {
+    opacity: 1;
+  }
+
+  // --------------------------------------------
+  // Links
+  // --------------------------------------------
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+
+    a {
+      color: $color-secondary;
+      text-decoration: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        color 0.15s ease,
+        text-decoration 0.15s ease;
+      font-weight: 500;
+      font-size: 1.05rem;
+
+      &:hover {
+        color: $color-primary;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &.animate .footer-links a {
+    @include fade-in-up(20px, 0.5s, ease-out, forwards);
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
+  }
+
+  // --------------------------------------------
+  // Text
+  // --------------------------------------------
+  .text-secondary,
+  .footer-last-updated {
+    opacity: 0;
+    transform: translateY(15px);
+    color: $color-muted;
+  }
+
+  .text-secondary {
+    font-weight: 500;
+    font-size: 1.15rem;
+  }
+
+  .footer-last-updated {
+    font-size: 0.95rem;
+  }
+
+  &.animate {
+    .text-secondary {
+      @include fade-in-up(15px, 0.5s, ease-out, forwards);
+      animation-delay: 0.6s;
+    }
+
+    .footer-last-updated {
+      @include fade-in-up(15px, 0.5s, ease-out, forwards);
+      animation-delay: 0.7s;
+    }
+  }
+
+  .footer-last-updated {
+    color: $color-muted;
+    font-size: 0.95rem;
+  }
+}
