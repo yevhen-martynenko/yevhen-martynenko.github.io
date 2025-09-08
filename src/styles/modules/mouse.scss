@@ -9,15 +9,15 @@
   margin-bottom: 4px;
 
   @media (max-width: $breakpoint-sm) {
-    width: 36px;
-    height: 60px;
-    border-radius: 21px;
+    width: 30px;
+    height: 48px;
+    border-radius: 18px;
   }
 
   @media (max-width: $breakpoint-xs) {
-    width: 36px;
-    height: 60px;
-    border-radius: 21px;
+    width: 30px;
+    height: 48px;
+    border-radius: 18px;
   }
 }
 
@@ -30,18 +30,18 @@
   top: 6px;
   left: 50%;
   transform: translateX(-50%);
-  animation: wheelMove 1.2s infinite;
+  animation: wheel_move 1.2s infinite;
 
   @media (max-width: $breakpoint-sm) {
-    width: 6px;
-    height: 9px;
-    top: 9px;
+    width: 5px;
+    height: 8px;
+    top: 8px;
   }
 
   @media (max-width: $breakpoint-xs) {
-    width: 6px;
-    height: 9px;
-    top: 9px;
+    width: 5px;
+    height: 8px;
+    top: 8px;
   }
 }
 
@@ -52,12 +52,12 @@
     font-size: 1.1rem;
 
     @media (max-width: $breakpoint-md) {
-      font-size: 1.3rem;
+      font-size: 1rem;
     }
 
     @media (max-width: $breakpoint-sm) {
-      font-size: 1.5rem;
-      letter-spacing: 0.15rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.12rem;
     }
   }
 
@@ -77,31 +77,31 @@
     @media (max-width: $breakpoint-md) {
       bottom: 2em;
       right: 3em;
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
 
     @media (max-width: $breakpoint-sm) {
       bottom: 1em;
       right: 1em;
-      font-size: 1.725rem;
+      font-size: 1.4rem;
     }
 
     @media (max-width: $breakpoint-xs) {
       bottom: 0.5em;
       right: 0.5em;
-      font-size: 1.725rem;
+      font-size: 1.4rem;
     }
 
     @media (max-width: 320px) {
       bottom: 0.3em;
       right: 0.3em;
-      font-size: 1.725rem;
+      font-size: 1.4rem;
     }
 
     @media (max-height: 500px) and (orientation: landscape) {
       bottom: 0.2em;
       right: 0.5em;
-      font-size: 1.65rem;
+      font-size: 1.3rem;
     }
 
     &.hidden {

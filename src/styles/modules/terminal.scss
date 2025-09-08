@@ -90,22 +90,44 @@
     height: 0.75rem;
     border-radius: 50%;
 
-    &--red {
-      background-color: $color-danger;
-      cursor: not-allowed;
-    }
+    @each $name, $color in $circles {
+      &--#{$name} {
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+        position: relative;
+        background-color: $color;
+        z-index: 1;
+        cursor: pointer;
 
-    &--yellow {
-      background-color: $color-warning;
-    }
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 1.75rem;
+          height: 1.75rem;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          filter: blur(2px);
+          z-index: -1;
+          transition: background-color 0.3s ease;
+        }
 
-    &--green {
-      background-color: $color-success;
+        &:hover::before {
+          background-color: color.change($color, $alpha: 0.4);
+        }
+
+        &:hover {
+          background-color: color.adjust($color, $lightness: 10%);
+          transform: scale(1.1);
+        }
+      }
     }
   }
 
   &__title {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
     color: $color-muted;
   }

@@ -29,6 +29,12 @@
     @each $status, $color in $messages {
       &--#{$status} {
         border-left-color: $color;
+
+        @media (max-width: $breakpoint-sm) {
+          border-top: 1px solid $color;
+          border-right: 1px solid $color;
+          border-bottom: 1px solid $color;
+        }
       }
     }
   }
