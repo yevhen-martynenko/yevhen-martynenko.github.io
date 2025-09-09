@@ -35,3 +35,9 @@ $terminal-colors: (
   "comment": $color-muted,
   "var": $color-text,
 );
+
+$circles: (
+  "red": $color-danger,
+  "yellow": $color-warning,
+  "green": $color-success,
+);

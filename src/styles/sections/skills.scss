@@ -37,7 +37,7 @@
         }
         &:hover {
           border-color: list.nth($props, 1);
-          box-shadow: 0 1rem 2rem rgba(list.nth($props, 1), 0.2);
+          box-shadow: 0 1rem 2rem color.change(list.nth($props, 1), $alpha: 0.2);
         }
       }
     }
@@ -55,8 +55,9 @@
   background-color: $color-surface-muted;
   border: $border;
   border-radius: $radius;
-  transition: all $transition;
+  transition: $transition;
   text-align: center;
+  opacity: 1;
 
   &:hover {
     transform: translateY(-0.25rem);

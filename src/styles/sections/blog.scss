@@ -1,12 +1,10 @@
 @use "../base/variables.scss" as *;
+@use "sass:color";
 
 #blog {
 }
 
 .blog {
-  // ----------------------------------------------
-  // Blog Grid
-  // ----------------------------------------------
   &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -36,7 +34,7 @@
     &:hover {
       transform: translateY(-0.25rem);
       border-color: $color-primary;
-      box-shadow: 0 0.5rem 1rem rgba($color-primary, 0.1);
+      box-shadow: 0 0.5rem 1rem color.change($color-primary, $alpha: 0.1);
 
       .blog__link {
         color: $color-primary;
