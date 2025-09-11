@@ -1,3 +1,5 @@
+import { MOBILE_MAX_WIDTH } from "@/constants.ts";
+
 // interfaces
 export interface BurgerMenuOptions {
   menu_btn_id: string;
@@ -8,7 +10,7 @@ export interface BurgerMenuOptions {
 
 // main function
 export function init_mobile_menu(options: BurgerMenuOptions = {}) {
-  const { menu_btn_id, mobile_menu_id, nav_link_selector, breakpoint = 768 } = options;
+  const { menu_btn_id, mobile_menu_id, nav_link_selector, breakpoint = MOBILE_MAX_WIDTH } = options;
 
   let is_menu_open = false;
   let menu_btn: HTMLElement | null = null;
@@ -46,7 +48,7 @@ export function init_mobile_menu(options: BurgerMenuOptions = {}) {
     mobile_nav_links.forEach((link, index) => {
       link.style.animation = "none";
       link.offsetHeight;
-      link.style.animation = `fade_in_up 0.5s ease forwards`;
+      link.classList.add("fade-in-up");
       link.style.animationDelay = `${index * 0.1}s`;
     });
   }

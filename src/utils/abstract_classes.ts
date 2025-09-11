@@ -2,10 +2,10 @@ export abstract class BaseAnimator {
   protected observer: IntersectionObserver | null = null;
   protected target: Element;
 
-  constructor(targetSelector: string) {
-    const el = document.querySelector(targetSelector);
-    if (!el) throw new Error(`Target element "${targetSelector}" not found.`);
-    this.target = el;
+  constructor(target_selector: string) {
+    const element = document.querySelector(target_selector);
+    if (!element) throw new Error(`Target element "${target_selector}" not found.`);
+    this.target = element;
     this.init();
   }
 
@@ -27,29 +27,29 @@ export abstract class BaseAnimator {
   protected abstract setup_animations(): void;
 
   // Clean up styles after animation
-  protected clean_element_styles(element: HTMLElement, cleanupDelay: number): void {
+  protected clean_element_styles(element: HTMLElement, cleanup_delay: number): void {
     setTimeout(() => {
       element.style.opacity = "";
       element.style.transform = "";
       element.style.transition = "";
-    }, cleanupDelay);
+    }, cleanup_delay);
   }
 
   // Helper for animating single element
   protected animate_element(
     selector: string,
     delay: number,
-    finalOpacity: string = "1",
-    finalTransform: string = "translate(0)",
-    cleanupDelay: number = 600
+    final_opacity: string = "1",
+    final_transform: string = "translate(0)",
+    cleanup_delay: number = 600
   ): void {
     const element = document.querySelector(selector);
     if (element) {
       setTimeout(() => {
         const el = element as HTMLElement;
-        el.style.opacity = finalOpacity;
-        el.style.transform = finalTransform;
-        this.clean_element_styles(el, cleanupDelay);
+        el.style.opacity = final_opacity;
+        el.style.transform = final_transform;
+        this.clean_element_styles(el, cleanup_delay);
       }, delay);
     }
   }
@@ -57,22 +57,22 @@ export abstract class BaseAnimator {
   // Helper for animating multiple elements
   protected animate_elements(
     selector: string,
-    baseDelay: number,
-    staggerDelay: number = 0,
-    finalOpacity: string = "1",
-    finalTransform: string = "translate(0)",
-    cleanupDelay: number = 600
+    base_delay: number,
+    stagger_delay: number = 0,
+    final_opacity: string = "1",
+    final_transform: string = "translate(0)",
+    cleanup_delay: number = 600
   ): void {
     const elements = document.querySelectorAll(selector);
     elements.forEach((element, index) => {
       setTimeout(
         () => {
           const el = element as HTMLElement;
-          el.style.opacity = finalOpacity;
-          el.style.transform = finalTransform;
-          this.clean_element_styles(el, cleanupDelay);
+          el.style.opacity = final_opacity;
+          el.style.transform = final_transform;
+          this.clean_element_styles(el, cleanup_delay);
         },
-        baseDelay + index * staggerDelay
+        base_delay + index * stagger_delay
       );
     });
   }

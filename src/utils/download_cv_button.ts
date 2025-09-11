@@ -1,11 +1,9 @@
 import { animate_button_icon } from "@utils/button_animations.ts";
-
-// config
-const MOBILE_BREAKPOINT = 768;
+import { MOBILE_MAX_WIDTH } from "@/constants.ts";
 
 // utils
 function is_mobile(): boolean {
-  return window.innerWidth < MOBILE_BREAKPOINT;
+  return window.innerWidth < MOBILE_MAX_WIDTH;
 }
 
 function is_hero_visible(): boolean {
@@ -26,6 +24,12 @@ function update_button_visibility(): void {
 
   if (mobile_btn) {
     mobile_btn.classList.toggle("is-hidden", !is_mobile());
+  }
+
+  if (is_mobile()) {
+    float_btn.classList.remove("visible");
+    hero_btn.style.visibility = "";
+    return;
   }
 
   if (is_hero_visible()) {

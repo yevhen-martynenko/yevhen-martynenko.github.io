@@ -1,7 +1,7 @@
 // interfaces
-type MessageType = "success" | "error" | "warning" | "info";
+export type MessageType = "success" | "error" | "warning" | "info";
 
-interface StoredMessage {
+export interface StoredMessage {
   message: string;
   type: MessageType;
   timestamp: number;
