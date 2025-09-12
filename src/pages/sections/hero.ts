@@ -1,10 +1,17 @@
-import "@utils/download_button_slide.ts";
+import { initialize_cv_buttons } from "@utils/download_cv_button.ts";
 import { matrix } from "@utils/matrix.ts";
 import { start_typewriter } from "@utils/typewriter.ts";
 import { terminal_manager } from "@utils/terminal_manager.ts";
 import { clipboard_manager } from "@utils/clipboard_manager.ts";
 import { scroll_manager } from "@utils/scroll_manager.ts";
+import { animate_button_icon } from "@utils/button_animations.ts";
+import "@utils/code_toggle.ts";
 
+import { MOBILE_MAX_WIDTH } from "@/constants.ts";
+
+// ----------------------------------------------
+// Typewriters
+// ----------------------------------------------
 interface TypewriterSequences {
   [key: string]: {
     contact_comment: Action[];
@@ -12,7 +19,22 @@ interface TypewriterSequences {
   };
 }
 
-const typewriter_sequences: TypewriterSequences = {
+export const typewriter_strings = {
+  en: {
+    contact_comment: "Ways to get in touch with me",
+    copy_comment: "Click to copy any of the details",
+  },
+  ua: {
+    contact_comment: "Способи зв'язку зі мною",
+    copy_comment: "Натисніть щоб скопіювати деталі",
+  },
+  ro: {
+    contact_comment: "Modalitî de a mă contacta",
+    copy_comment: "Apăsați pentru a coipa detaliile",
+  },
+};
+
+export const typewriter_sequences: TypewriterSequences = {
   en: {
     contact_comment: [
       { action: "type", value: "Ways t oge" },
@@ -69,9 +91,9 @@ async function run_typewriters() {
   await start_typewriter(comment_el_2, sequences.copy_comment, { cursor: true });
 }
 
-// ==================================================
-// HERO SECTION
-// ==================================================
+// ----------------------------------------------
+// Hero
+// ----------------------------------------------
 interface HeroElements {
   hero: HTMLElement | null;
   status_indicator: HTMLElement | null;
@@ -100,12 +122,14 @@ class HeroSection {
 
   private init(): void {
     this.setup_event_listeners();
-    run_typewriters();
+    if (window.innerWidth > MOBILE_MAX_WIDTH) {
+      run_typewriters();
+    }
   }
 
   private setup_event_listeners(): void {
     this.elements.buttons.forEach((btn) => {
-      btn.addEventListener("mouseenter", () => this.animate_button_icon(btn));
+      btn.addEventListener("mouseenter", () => animate_button_icon({ btn: btn }));
     });
 
     this.elements.social_links.forEach((link) => {
@@ -119,14 +143,6 @@ class HeroSection {
     }
   }
 
-  private animate_button_icon(btn: HTMLElement): void {
-    const icon = btn.querySelector(".btn__icon") as SVGElement;
-    if (icon) {
-      icon.style.transform = btn.classList.contains("btn--primary") ? "translateX(4px)" : "translateY(-4px)";
-      setTimeout(() => (icon.style.transform = ""), 200);
-    }
-  }
-
   private handle_social_click(e: Event): void {
     const link = e.currentTarget as HTMLAnchorElement;
     if (link.href.startsWith("mailto:") || link.classList.contains("hero__location")) return;
@@ -135,18 +151,46 @@ class HeroSection {
   }
 }
 
-// ==================================================
-const app = {
-  init(): void {
+// ----------------------------------------------
+// Hero module controller
+// ----------------------------------------------
+export const hero = {
+  async init(): Promise<void> {
+    new HeroSection();
     matrix.start_matrix("matrix-canvas");
     clipboard_manager.init();
+    terminal_manager.init();
+    initialize_cv_buttons();
+
+    // Wait for layout to stabilize
+    await this.wait_for_layout_stable();
     scroll_manager.init();
     scroll_manager.setup_scroll_animations();
-    terminal_manager.init();
-    new HeroSection();
+  },
+
+  wait_for_layout_stable(): Promise<void> {
+    return new Promise((resolve) => {
+      let resize_timer: number;
+      let last_height = document.documentElement.scrollHeight;
+
+      const resize_observer = new ResizeObserver(() => {
+        clearTimeout(resize_timer);
+        resize_timer = window.setTimeout(() => {
+          const current_height = document.documentElement.scrollHeight;
+          if (current_height === last_height) {
+            resize_observer.disconnect();
+            resolve();
+          }
+          last_height = current_height;
+        }, 50);
+      });
+
+      resize_observer.observe(document.body);
+
+      setTimeout(() => {
+        resize_observer.disconnect();
+        resolve();
+      }, 1000);
+    });
   },
 };
-
-document.addEventListener("DOMContentLoaded", () => {
-  app.init();
-});
