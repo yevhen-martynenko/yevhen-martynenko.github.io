@@ -1,5 +1,5 @@
-import { MOBILE_MAX_WIDTH } from "@pages/index.ts";
 import { BaseAnimator } from "@utils/abstract_classes.ts";
+import { MOBILE_MAX_WIDTH } from "@/constants.ts";
 
 export class HeroAnimator extends BaseAnimator {
   private animated = false;
@@ -17,7 +17,7 @@ export class HeroAnimator extends BaseAnimator {
     if (status) {
       const element = status as HTMLElement;
       element.style.opacity = "0";
-      element.style.transform = "translateY(-20px)";
+      element.style.transform = "translateY(-1.5rem)";
       element.style.transition = "all 0.6s ease";
     }
 
@@ -26,7 +26,7 @@ export class HeroAnimator extends BaseAnimator {
     if (title) {
       const element = title as HTMLElement;
       element.style.opacity = "0";
-      element.style.transform = this.is_mobile ? "translateY(-30px)" : "translateX(-30px)";
+      element.style.transform = this.is_mobile ? "translateY(-2.5rem)" : "translateX(-2.5rem)";
       element.style.transition = "all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
     }
 
@@ -35,7 +35,7 @@ export class HeroAnimator extends BaseAnimator {
     if (subtitle) {
       const element = subtitle as HTMLElement;
       element.style.opacity = "0";
-      element.style.transform = this.is_mobile ? "translateY(-25px)" : "translateX(-35px)";
+      element.style.transform = this.is_mobile ? "translateY(-1.75rem)" : "translateX(-2.5rem)";
       element.style.transition = "all 0.6s ease";
     }
 
@@ -44,7 +44,7 @@ export class HeroAnimator extends BaseAnimator {
     if (description) {
       const element = description as HTMLElement;
       element.style.opacity = "0";
-      element.style.transform = this.is_mobile ? "translateY(30px)" : "translateX(-50px)";
+      element.style.transform = this.is_mobile ? "translateY(2rem)" : "translateX(-3.5rem)";
       element.style.transition = "all 0.6s ease";
     }
 
@@ -53,7 +53,7 @@ export class HeroAnimator extends BaseAnimator {
     if (actions) {
       const element = actions as HTMLElement;
       element.style.opacity = "0";
-      element.style.transform = "translateY(30px)";
+      element.style.transform = "translateY(2rem)";
       element.style.transition = "all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
     }
 
@@ -61,7 +61,7 @@ export class HeroAnimator extends BaseAnimator {
     document.querySelectorAll(".hero__social-link, .hero__location").forEach((social) => {
       const element = social as HTMLElement;
       element.style.opacity = "0";
-      element.style.transform = "translateY(20px)";
+      element.style.transform = "translateY(2rem)";
       element.style.transition = "all 0.4s ease";
     });
 
@@ -70,7 +70,7 @@ export class HeroAnimator extends BaseAnimator {
     if (terminal) {
       const element = terminal as HTMLElement;
       element.style.opacity = "0";
-      element.style.transform = this.is_mobile ? "translateY(40px)" : "translateX(60px)";
+      element.style.transform = this.is_mobile ? "translateY(3rem)" : "translateX(5rem)";
       element.style.transition = "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
     }
 
@@ -79,16 +79,13 @@ export class HeroAnimator extends BaseAnimator {
     if (scrollIndicator) {
       const element = scrollIndicator as HTMLElement;
       element.style.opacity = "0";
-      element.style.transform = "translateY(20px)";
+      element.style.transform = "translateY(1.5rem)";
       element.style.transition = "all 0.5s ease";
     }
   }
 
   protected setup_animations(): void {
-    this.observer = new IntersectionObserver(
-      (entries) => this.handle_intersection(entries), 
-      { threshold: 0.2 }
-    );
+    this.observer = new IntersectionObserver((entries) => this.handle_intersection(entries), { threshold: 0.2 });
     if (this.target) {
       this.observer.observe(this.target);
     }
@@ -113,4 +110,23 @@ export class HeroAnimator extends BaseAnimator {
     this.animate_element(".scroll-indicator", 1600, "1", "translateY(0)", 600);
     this.animate_elements(".hero__social-link, .hero__location", 1200, 80, "1", "translateY(0)", 500);
   }
+}
+
+// Animations initialization
+let hero_animator: HeroAnimator | null = null;
+
+export function init_hero_animations(): void {
+  try {
+    const hero_element = document.querySelector(".hero");
+    if (hero_element) {
+      hero_animator = new HeroAnimator();
+    }
+  } catch (error) {
+    console.warn("Hero animations initialization failed:", error);
+  }
+}
+
+export function destroy_hero_animations(): void {
+  hero_animator?.destroy();
+  hero_animator = null;
 }
