@@ -114,13 +114,17 @@
         transform: translateY(-2px);
       }
     }
+
+    @media (max-width: $breakpoint-sm) {
+      justify-content: center;
+    }
   }
 }
 
 // ----------------------------------------------
 // Language Skills
 // ----------------------------------------------
-.languages-list {
+.languages__list {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
