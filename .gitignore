@@ -1,0 +1,21 @@
+.vim_session
+.ssh/
+venv/
+.env
+*.env
+.env.*
+*.key
+*.crt
+
+# webpack
+node_modules/
+package-lock.json
+
+# build output
+dist/
+# public/
+# src/
+
+# local
+TODO.md
+*.log

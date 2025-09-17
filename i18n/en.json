@@ -1,0 +1,153 @@
+{
+  "nav": {
+    "home": "Home",
+    "experience": "Experience",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Available for work",
+    "unavailable": "Not available for work",
+    "greeting": "Hi, I'm",
+    "name": "Yevhen",
+    "role": "Backend Developer",
+    "description": "Backend developer focused on Python, Django, and REST APIs. I write clean, secure, and scalable code, and enjoy turning ideas into working software. When I'm not coding, I'm probably breaking and fixing my Linux config.",
+    "contact_btn": "Contact me",
+    "cv_btn": "Download CV",
+    "location": "Location: Chișinău, Moldova",
+    "scroll": "scroll"
+  },
+  "experience": {
+    "title": "Experience",
+    "1": {
+      "position": "Full Stack Developer",
+      "company": "Personal Project",
+      "period": "April 2025 - Present",
+      "achievements": {
+        "1": "Developed a Django-based web application with a REST API using Django REST Framework.",
+        "2": "Implemented frontend with TypeScript, HTML, and SCSS, bundled using Webpack.",
+        "3": "Wrote comprehensive tests for all API endpoints using PyTest, ensuring reliability and coverage.",
+        "4": "Deployed and tested the application on a virtual machine, assessing security and performance.",
+        "5": "Configured development and testing environments for consistent workflow."
+      }
+    },
+    "2": {
+      "position": "Backend Developer",
+      "company": "Team Challenge",
+      "period": "March 2025 - June 2025",
+      "achievements": {
+        "1": "Developed RESTful APIs for products, including CRUD operations, search, sorting, filtering, and pagination.",
+        "2": "Implemented user authentication and management (registration, login, logout, profiles) using JWT and Google Login.",
+        "3": "Created API documentation with OpenAPI (Swagger).",
+        "4": "Automated tasks using custom Bash and Python scripts.",
+        "5": "Designed and optimized MySQL database structures."
+      }
+    },
+    "3": {
+      "position": "Cybersecurity Intern",
+      "company": "Cyber Police Department of Ukraine",
+      "period": "February 2024 - June 2024",
+      "achievements": {
+        "1": "Applied web application security techniques under the guidance of senior officers, testing for vulnerabilities.",
+        "2": "Collaborated with a mentor to explore modern web security approaches for academic research.",
+        "3": "Developed a Django-based web application for my diploma project and assessed it for vulnerabilities using standard security tools.",
+        "4": "Observed field operations and detentions, gaining practical exposure to law enforcement practices."
+      }
+    }
+  },
+  "education": {
+    "title": "Education",
+    "1": {
+      "degree": "Bachelor's Degree",
+      "field": "Computer Science",
+      "university": "Odesa National Polytechnic University"
+    },
+    "2": {
+      "degree": "Junior Bachelor",
+      "field": "Information Technologies",
+      "university": "State University of ITT"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "technical": "Technical Skills",
+    "languages": "Languages",
+    "lang": {
+      "english": "English",
+      "romanian": "Romanian",
+      "ukrainian": "Ukrainian",
+      "russian": "Russian",
+      "spanish": "Spanish",
+      "icelandic": "Icelandic"
+    },
+    "level": {
+      "c2": "C2 Proficient",
+      "c1": "C1 Advanced",
+      "b2": "B2 Upper-Intermediate",
+      "b1": "B1 Intermediate",
+      "a2": "A2 Elementary",
+      "a1": "A1 Beginner",
+      "native": "Native"
+    },
+    "note": {
+      "english": "Professional working proficiency, technical documentation",
+      "romanian": "Basic understanding, limited working proficiency"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "filter": {
+      "all": "All",
+      "work": "Work",
+      "cli": "CLI Tools",
+      "landing": "Landing Pages",
+      "apps": "Apps"
+    },
+    "1": {
+      "title": "Personal Portfolio Website",
+      "description": "Personal website built with HTML, SCSS, and TypeScript."
+    },
+    "2": {
+      "title": "Recipe App",
+      "description": "Web application for creating and managing recipes. Built with Django and Django REST Framework.",
+      "note": "Project not finished yet."
+    },
+    "3": {
+      "title": "Django Polls App",
+      "description": "Web application for creating and voting in polls. User-friendly interface and part of my diploma work."
+    },
+    "4": {
+      "title": "Image Sorter",
+      "description": "Terminal-based image management tool using Python and curses. Sort, move, rename, and delete images with keyboard shortcuts."
+    },
+    "5": {
+      "title": "Tkinter Password Generator",
+      "description": "Simple Tkinter application to generate secure passwords through a GUI."
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "email": {
+      "label": "Email Address",
+      "placeholder": "email@domain.com"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Your message here..."
+    },
+    "submit": "Send Message",
+    "social": {
+      "gmail": "yevhen.martynenko.v@gmail.com",
+      "proton": "yevhen.martynenko@proton.me",
+      "github": "Code Repository",
+      "linkedin": "Professional Network",
+      "medium": "Technical Writing"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Yevhen Martynenko",
+    "last_updated": "Last updated: September 2025"
+  }
+}

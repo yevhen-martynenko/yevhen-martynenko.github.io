@@ -1,0 +1,13 @@
+{
+  "send_message": "Trimite Mesajul",
+  "sending": "Se trimite...",
+  "email_required": "Email-ul este obligatoriu",
+  "email_invalid": "Vă rugăm să introduceți o adresă de email validă",
+  "message_required": "Mesajul este obligatoriu",
+  "message_too_short": "Mesajul trebuie să aibă cel puțin 10 caractere",
+  "message_too_long": "Mesajul trebuie să aibă mai puțin de 1000 de caractere",
+  "fix_errors": "Vă rugăm să corectați erorile de mai sus",
+  "success": "Mulțumesc! Mesajul dumneavoastră a fost trimis cu succes.",
+  "failed": "Nu s-a putut trimite mesajul. Vă rugăm să încercați din nou.",
+  "error": "A apărut o eroare. Vă rugăm să încercați mai târziu."
+}
