@@ -1,0 +1,213 @@
+@use "../base/variables.scss" as *;
+@use "../variables/skills.scss" as *;
+@use "sass:color";
+@use "sass:map";
+@use "sass:list";
+
+#skills {
+}
+
+.skills__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+// ----------------------------------------------
+// Skill Cards
+// ----------------------------------------------
+.skills {
+  margin-bottom: 2rem;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    @each $name, $props in $skills {
+      .skill.#{$name} {
+        .skill__icon {
+          background-image: url(list.nth($props, 2));
+        }
+        &:hover {
+          border-color: list.nth($props, 1);
+          box-shadow: 0 1rem 2rem color.change(list.nth($props, 1), $alpha: 0.2);
+        }
+      }
+    }
+  }
+}
+
+.skill {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: $color-surface-muted;
+  border: $border;
+  border-radius: $radius;
+  transition: $transition;
+  text-align: center;
+  opacity: 1;
+
+  &:hover {
+    transform: translateY(-0.25rem);
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    background-size: 2rem 2rem;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__name {
+    font-family: $font-mono;
+    font-weight: 600;
+    color: $color-text;
+    font-size: 1.15rem;
+    letter-spacing: 0.075rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  // ----------------------------------------------
+  // Skill Badges
+  // ----------------------------------------------
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    [class*="badge--"] {
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.5rem;
+      font-family: $font-mono;
+      letter-spacing: 0.05rem;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all $transition;
+
+      @each $type, $color in $tool-colors {
+        &.badge--#{$type} {
+          background-color: color.change($color, $alpha: 0.08);
+          color: $color;
+          border: 1px solid $color;
+        }
+      }
+
+      &:hover {
+        background-color: $color-surface-muted;
+        color: $color-primary;
+        border-color: $color-primary;
+        transform: translateY(-2px);
+      }
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      justify-content: center;
+    }
+  }
+}
+
+// ----------------------------------------------
+// Language Skills
+// ----------------------------------------------
+.languages__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.language {
+  background-color: $color-surface-muted;
+  border: $border;
+  border-radius: $radius;
+  padding: 1.5rem;
+  transition: all $transition;
+
+  &:hover {
+    transform: translateY(-0.125rem);
+
+    @each $class, $base-color in $color-map {
+      &.#{$class} {
+        border-color: $base-color;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .flag-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .flag {
+        font-size: 1.5rem;
+      }
+    }
+
+    .level-badge {
+      padding: 0.5rem 1rem;
+      border-radius: calc($radius * 0.75);
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: $font-mono;
+      letter-spacing: 0.05em;
+
+      @each $class, $base-color in $color-map {
+        &.#{$class} {
+          background-color: color.change($base-color, $alpha: 0.25);
+          color: color.scale($base-color, $lightness: 33%);
+          border: 1px solid color.scale($base-color, $lightness: -25%);
+        }
+      }
+    }
+  }
+
+  &__name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: $font-mono;
+    color: $color-text;
+    letter-spacing: 0.075rem;
+  }
+
+  &__note {
+    font-size: 1.1rem;
+    font-family: $font-body;
+    color: $color-muted;
+    font-style: italic;
+    margin-top: 0.75rem;
+    line-height: 1.5;
+  }
+}
+
+// ----------------------------------------------
+// Media Queries
+// ----------------------------------------------
+@media (max-width: $breakpoint-sm) {
+  .frameworks-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .skill-tags [class*="badge--"] {
+    font-size: 1.25rem;
+    padding: 0.5rem 1.5rem;
+  }
+}

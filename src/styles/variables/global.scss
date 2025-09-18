@@ -1,0 +1,43 @@
+@use "../base/variables.scss" as *;
+
+$contact: (
+  "gmail": (#ea4335, "@icons/social/gmail.svg"),
+  "proton": (#6d4aff, "@icons/social/proton_mail.svg"),
+  "linkedin": (#0077b5, "@icons/social/linkedin.svg"),
+  "github": (#ffffff, "@icons/social/github.svg"),
+  "medium": (#ffffff, "@icons/social/medium.svg"),
+);
+
+$categories: (
+  "security": $color-info,
+  "django": $color-success,
+  "devops": $color-8,
+  "python": $color-3,
+  "frontend": $color-4,
+  "backend": $color-5,
+  "misc": $color-2,
+);
+
+$messages: (
+  "success": $color-success,
+  "error": $color-error,
+  "warning": $color-warning,
+  "info": $color-info,
+);
+
+$terminal-colors: (
+  "keyword": $color-8,
+  "operator": $color-7,
+  "brace": $color-3,
+  "key": $color-6,
+  "string": $color-4,
+  "array": $color-1,
+  "comment": $color-muted,
+  "var": $color-text,
+);
+
+$circles: (
+  "red": $color-danger,
+  "yellow": $color-warning,
+  "green": $color-success,
+);

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <title>{% block title %}Yevhen Martynenko{% endblock %}</title>
+  <link rel="icon" href="favicon.ico">
+  {% include "../partials/head.html" %}
+  {% block page_styles %}{% endblock page_styles %}
+</head>
+
+<body>
+
+{% include "../partials/header.html" %}
+<main>
+{% block content %}{% endblock %}
+</main>
+
+{% include "../partials/footer.html" %}
+
+<script defer src="main.js"></script>
+<script defer src="runtime.js"></script>
+<script defer src="defaultVendors-src_styles_main_scss.bundle.js"></script>
+{% block page_scripts %}{% endblock page_scripts %}
+
+</body>
+
+</html>

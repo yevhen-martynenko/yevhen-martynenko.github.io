@@ -1,0 +1,80 @@
+@use "../base/variables.scss" as *;
+@use "sass:color";
+
+#blog {
+}
+
+.blog {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  // ----------------------------------------------
+  // Blog Cards
+  // ----------------------------------------------
+  &__card {
+    display: block;
+    background-color: $color-surface-muted;
+    border: $border;
+    border-radius: $radius;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all $transition;
+
+    &:hover {
+      transform: translateY(-0.25rem);
+      border-color: $color-primary;
+      box-shadow: 0 0.5rem 1rem color.change($color-primary, $alpha: 0.1);
+
+      .blog__link {
+        color: $color-primary;
+
+        .link__arrow {
+          transform: translateX(0.4rem) translateY(-4px);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  // ----------------------------------------------
+  // Blog Content
+  // ----------------------------------------------
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $color-secondary;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: all $transition;
+
+    .link__text {
+      transition: color $transition;
+    }
+
+    .link__arrow {
+      display: inline-block;
+      font-size: 1.75rem;
+      transform: translateX(-0.2rem) translateY(-4px);
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+      opacity: 0.8;
+    }
+  }
+
+  &__btn {
+    text-align: center;
+  }
+}

@@ -1,0 +1,56 @@
+// ----------------------------------------------
+// Colors
+// ----------------------------------------------
+$color-text: #f3f4f6;
+$color-primary: #84d653;
+$color-accent: #059669;
+$color-surface: #0a0a0a;
+$color-surface-muted: #111111;
+
+$color-border: #374151;
+$color-muted: #6b7280;
+$color-secondary: #9ca3af;
+
+$color-error: #f44336;
+$color-success: #4caf50;
+$color-danger: #f44336;
+$color-warning: #ff9800;
+$color-info: #2196f3;
+
+$color-white: #fff;
+$color-black: #000;
+$color-1: #ff595e;
+$color-2: #ff924c;
+$color-3: #ffca3a;
+$color-4: #8ac926;
+$color-5: #52a675;
+$color-6: #1982c4;
+$color-7: #4267ac;
+$color-8: #6a4c93;
+
+// ----------------------------------------------
+// Fonts
+// ----------------------------------------------
+$font-body: "Roboto", sans-serif;
+$font-heading: "Montserrat", sans-serif;
+$font-mono: "JetBrains Mono", monospace;
+
+// ----------------------------------------------
+// Breakpoints
+// ----------------------------------------------
+$content-width: 760px;
+$block-width: 900px;
+$breakpoint-xs: 480px; // Mobile Small
+$breakpoint-sm: 768px; // Tablet
+$breakpoint-md: 1024px; // Laptop
+$breakpoint-lg: 1280px; // Desktop
+$breakpoint-xl: 1536px; // XL Desktop
+
+// ----------------------------------------------
+// Misc
+// ----------------------------------------------
+$radius: 8px;
+$transition: 0.3s ease;
+$border: 1px solid $color-border;
+$border-primary: 1px solid $color-muted;
+$border-select: 1px solid $color-primary;

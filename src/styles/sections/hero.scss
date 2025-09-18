@@ -1,0 +1,486 @@
+@use "../base/variables.scss" as *;
+@use "../variables/global.scss" as *;
+@use "../modules/cv-button.scss" as *;
+@use "sass:color";
+@use "sass:list";
+
+#hero-sentinel {
+  width: 1px;
+  height: 1px;
+  position: relative;
+  bottom: 160px;
+}
+
+.hero {
+  min-height: 100vh;
+  background-color: $color-surface;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  #matrix-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.2;
+  }
+
+  &__container {
+    max-width: $block-width;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 0 1.5rem;
+      gap: 1.5rem;
+      grid-template-rows: auto auto;
+      align-items: stretch;
+    }
+
+    @media (max-width: $breakpoint-xs) {
+      padding: 0 1rem;
+      gap: 1rem;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+
+    @media (max-width: $breakpoint-md) {
+      order: 1;
+      gap: 2rem;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      gap: 1.75rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  // ----------------------------------------------
+  // Status
+  // ----------------------------------------------
+  &__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: fit-content;
+    cursor: cell;
+
+    @media (max-width: $breakpoint-md) {
+      align-self: center;
+      gap: 0.5rem;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      gap: 0.4rem;
+      padding: 0.3rem 0.9rem;
+      background-color: color.change($color-primary, $alpha: 0.1);
+      border-radius: $radius;
+      border: 1px solid color.change($color-primary, $alpha: 0.2);
+    }
+
+    span {
+      font-family: $font-body;
+      color: $color-muted;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    &-indicator {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      position: relative;
+      z-index: 1;
+      animation: pulse 2s infinite;
+
+      @media (max-width: $breakpoint-sm) {
+        width: 0.6rem;
+        height: 0.6rem;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        filter: blur(6px);
+        z-index: -1;
+        transition: background 0.3s ease;
+
+        @media (max-width: $breakpoint-sm) {
+          width: 3rem;
+          height: 3rem;
+          filter: blur(4px);
+        }
+      }
+
+      &:hover {
+        animation: none;
+      }
+
+      &.available {
+        background-color: $color-primary;
+
+        &::before {
+          background: radial-gradient(circle, color.change($color-primary, $alpha: 0.1) 75%);
+        }
+      }
+
+      &.unavailable {
+        background-color: $color-danger;
+
+        &::before {
+          background: radial-gradient(circle, color.change($color-danger, $alpha: 0.1) 75%);
+        }
+      }
+    }
+  }
+
+  // ----------------------------------------------
+  // Hero Section
+  // ----------------------------------------------
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    margin-bottom: 1rem;
+
+    @media (max-width: $breakpoint-sm) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: $color-text;
+    line-height: 1.1;
+    cursor: default;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: clamp(2.5rem, 7.5vw, 3rem);
+    }
+  }
+
+  &__name {
+    color: $color-primary;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 108%;
+      height: 0.1em;
+      background: linear-gradient(90deg, $color-primary, $color-accent);
+      border-radius: 2px;
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover {
+      background: linear-gradient(90deg, $color-primary, $color-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      &::after {
+        transform: translateX(-50%) scaleX(1);
+      }
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-body;
+    font-size: 1.5rem;
+    color: $color-muted;
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    @media (max-width: $breakpoint-xs) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__description {
+    font-family: $font-body;
+    font-size: 1.25rem;
+    color: $color-text;
+    line-height: 1.6;
+    max-width: 90%;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+
+    @media (max-width: $breakpoint-md) {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: $breakpoint-xs) {
+      font-size: 1.15rem;
+    }
+  }
+
+  // ----------------------------------------------
+  // Actions
+  // ----------------------------------------------
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+
+    @media (max-width: $breakpoint-md) {
+      justify-content: center;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      flex-direction: column;
+      width: 100%;
+      gap: 1.25rem;
+    }
+  }
+
+  // ----------------------------------------------
+  // Social
+  // ----------------------------------------------
+  &__social {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    @media (max-width: $breakpoint-md) {
+      justify-content: center;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    color: $color-muted;
+    border-radius: $radius;
+    background-color: transparent;
+    transition: all $transition;
+    text-decoration: none;
+    margin-right: 1.5rem;
+
+    @media (max-width: $breakpoint-sm) {
+      width: 2.25rem;
+      height: 2.25rem;
+      margin-right: 0.5rem;
+    }
+
+    @media (max-width: $breakpoint-xs) {
+      width: 3rem;
+      height: 3rem;
+      margin-right: 0.75rem;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &:nth-last-of-type(2) {
+      margin-right: 0;
+    }
+
+    @each $name, $props in $contact {
+      $color: list.nth($props, 1);
+      $icon: list.nth($props, 2);
+
+      &.icon__#{$name} {
+        .icon {
+          background-image: url(#{$icon});
+        }
+
+        &:hover {
+          color: $color;
+          border-color: $color;
+          background-color: color.change($color, $alpha: 0.33);
+        }
+      }
+    }
+  }
+
+  &__location {
+    font-family: $font-body;
+    font-size: 1rem;
+    color: $color-secondary;
+    padding: 0.75rem 0;
+    border-left: 2px solid $color-border;
+    padding-left: 1rem;
+    margin-left: 0.75rem;
+    white-space: nowrap;
+    transition: $transition;
+
+    &:hover {
+      color: $color-primary;
+      text-decoration: underline;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      border-left: none;
+      border-top: 2px solid $color-border;
+      margin-left: 0;
+      text-align: center;
+      font-size: 1.05rem;
+      padding: 0.5rem 0;
+      margin-top: 0.5rem;
+      width: 100%;
+    }
+
+    @media (max-width: $breakpoint-xs) {
+      font-size: 1rem;
+    }
+  }
+}
+
+// ----------------------------------------------
+// Modal overlay for code
+// ----------------------------------------------
+.show-code-btn {
+  display: none;
+
+  @media (max-width: $breakpoint-md) {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .hero__container {
+    grid-template-columns: 1fr !important;
+
+    > .code {
+      display: none;
+    }
+  }
+}
+
+.modal {
+  &--open {
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-md + 1px) {
+      overflow: auto;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus {
+      outline: none;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 1rem;
+    }
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+
+      .modal__content {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow: auto;
+    border-radius: calc($radius * 1.5);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: scale(0.8) translateY(50px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    .code {
+      margin: 0;
+      position: relative;
+
+      .terminal {
+        border-radius: calc($radius * 1.5);
+        overflow: hidden;
+      }
+
+      .terminal__header {
+        position: relative;
+      }
+
+      .scroll-indicator {
+        display: none;
+      }
+    }
+  }
+}

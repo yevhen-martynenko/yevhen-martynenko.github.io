@@ -1,0 +1,13 @@
+{
+  "send_message": "Send Message",
+  "sending": "Sending...",
+  "email_required": "Email is required",
+  "email_invalid": "Please enter a valid email address",
+  "message_required": "Message is required",
+  "message_too_short": "Message must be at least 10 characters",
+  "message_too_long": "Message must be less than 1000 characters",
+  "fix_errors": "Please fix the errors above",
+  "success": "Thank you! Your message has been sent successfully.",
+  "failed": "Failed to send message. Please try again.",
+  "error": "An error occurred. Please try again later."
+}

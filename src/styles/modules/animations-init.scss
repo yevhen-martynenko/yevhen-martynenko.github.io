@@ -1,0 +1,30 @@
+body:not(.animations-loaded) .nav-link,
+body:not(.animations-loaded) .language-switcher, 
+
+body:not(.animations-loaded) .hero__status,
+body:not(.animations-loaded) .hero__title,
+body:not(.animations-loaded) .hero__subtitle,
+body:not(.animations-loaded) .hero__description,
+body:not(.animations-loaded) .hero__actions,
+body:not(.animations-loaded) .terminal,
+body:not(.animations-loaded) .scroll-indicator,
+body:not(.animations-loaded) .hero__social-link,
+body:not(.animations-loaded) .hero__location,
+
+body:not(.animations-loaded) .experience__list .card,
+body:not(.animations-loaded) .experience__list .experience__period,
+body:not(.animations-loaded) .experience__list .tech-stack__tag,
+body:not(.animations-loaded) .education .card,
+body:not(.animations-loaded) .education .education__period,
+
+body:not(.animations-loaded) #portfolio .project,
+body:not(.animations-loaded) #portfolio .filter-btn,
+
+body:not(.animations-loaded) #blog .blog__card,
+body:not(.animations-loaded) #blog .blog__btn,
+
+body:not(.animations-loaded) #contact .contact__form,
+body:not(.animations-loaded) #contact .contact__social
+{
+  opacity: 0;
+}

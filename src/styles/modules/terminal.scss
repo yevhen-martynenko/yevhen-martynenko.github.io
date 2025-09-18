@@ -1,0 +1,165 @@
+@use "../base/variables.scss" as *;
+@use "../variables/global.scss" as *;
+@use "sass:color";
+@use "sass:list";
+
+// ----------------------------------------------
+// Console
+// ----------------------------------------------
+.code {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-mono;
+
+  @media (max-width: $breakpoint-md) {
+    order: 1;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-family: $font-mono;
+    align-items: flex-start;
+  }
+
+  &__object {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  &__property {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  @each $name, $color in $terminal-colors {
+    &__#{$name} {
+      color: color.change($color, $lightness: 60%);
+
+      @if $name == keyword {
+        font-weight: 600;
+      }
+
+      @if $name == string {
+        margin-left: 0.75rem;
+      }
+    }
+  }
+}
+
+// ----------------------------------------------
+// Terminal
+// ----------------------------------------------
+.terminal {
+  background-color: $color-surface-muted;
+  border: $border;
+  border-radius: $radius;
+  width: 100%;
+  max-width: 400px;
+  transition: transform $transition;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    max-width: 100%;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background-color: color.change($color-surface-muted, $lightness: 5%);
+    border-bottom: $border;
+    border-radius: $radius $radius 0 0;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+
+    @each $name, $color in $circles {
+      &--#{$name} {
+        width: 0.75rem;
+        height: 0.75rem;
+        border-radius: 50%;
+        position: relative;
+        background-color: $color;
+        z-index: 1;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 1.75rem;
+          height: 1.75rem;
+          border-radius: 50%;
+          transform: translate(-50%, -50%);
+          filter: blur(2px);
+          z-index: -1;
+          transition: background-color 0.3s ease;
+        }
+
+        &:hover::before {
+          background-color: color.change($color, $alpha: 0.4);
+        }
+
+        &:hover {
+          background-color: color.adjust($color, $lightness: 10%);
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $color-muted;
+  }
+
+  &__body {
+    padding: 1.5rem;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+}
+
+// ----------------------------------------------
+// Elements for copy
+// ----------------------------------------------
+.copyable {
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    background-color 0.2s;
+  padding: 2px 4px;
+  border-radius: 4px;
+
+  &:hover {
+    color: $color-primary;
+    background-color: color.change($color-accent, $alpha: 0.15);
+  }
+
+  &.copied {
+    color: $color-primary;
+    background-color: color.change($color-accent, $alpha: 0.3);
+    transition:
+      color 1.5s ease,
+      background-color 1.5s ease;
+  }
+}

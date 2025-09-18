@@ -1,0 +1,155 @@
+<section id="contact" class="section">
+  <div class="container">
+    <h2 class="section__title">
+      <a href="#contact" data-translate="contact.title">Get In Touch</a>
+    </h2>
+
+    <div class="contact">
+      <!-- Contact Form -->
+      <div class="contact__form-wrapper">
+        <form class="contact__form" id="contact-form" action="https://formspree.io/f/xeolqydk" method="POST">
+          <div class="contact__field">
+            <label for="email" class="contact__label" data-translate="contact.email.label">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="contact__input"
+              placeholder="email@domain.com"
+              data-translate="contact.email.placeholder"
+              required
+              aria-describedby="email-error"
+            />
+            <span class="contact__error" id="email-error" role="alert"></span>
+          </div>
+          <div class="contact__field">
+            <label for="message" class="contact__label" data-translate="contact.message.label">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              class="contact__textarea"
+              placeholder="Your message here..."
+              data-translate="contact.message.placeholder"
+              required
+              rows="6"
+              aria-describedby="message-error"
+            ></textarea>
+            <span class="contact__error" id="message-error" role="alert"></span>
+          </div>
+          <button type="submit" class="contact__submit">
+            <span class="contact__submit-text" data-translate="contact.submit">Send Message</span>
+            <span class="contact__submit-icon" aria-hidden="true">
+              <svg fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path>
+                </g>
+              </svg>
+            </span>
+          </button>
+          <div class="contact__status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <!-- Social Links -->
+      <div class="contact__social-wrapper">
+        <div class="contact__socials">
+          <!-- Gmail -->
+          <a href="mailto:yevhen.martynenko.v@gmail.com" class="contact__social icon__gmail" aria-label="Send email via Gmail">
+            <div class="contact__social-icon">
+              <div class="icon"></div>
+            </div>
+            <div class="contact__social-info">
+              <span class="contact__social-name">Gmail</span>
+              <span class="contact__social-handle" data-translate="contact.social.gmail">yevhen.martynenko.v@gmail.com</span>
+            </div>
+            <div class="contact__social-external" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </div>
+          </a>
+          <!-- ProtonMail -->
+          <a href="mailto:yevhen.martynenko@proton.me" class="contact__social icon__proton" aria-label="Send email via ProtonMail">
+            <div class="contact__social-icon">
+              <div class="icon icon--lg"></div>
+            </div>
+            <div class="contact__social-info">
+              <span class="contact__social-name">ProtonMail</span>
+              <span class="contact__social-handle" data-translate="contact.social.proton">yevhen.martynenko@proton.me</span>
+            </div>
+            <div class="contact__social-external" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </div>
+          </a>
+          <!-- GitHub -->
+          <a
+            href="https://github.com/yevhen-martynenko/"
+            class="contact__social icon__github"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit GitHub profile"
+          >
+            <div class="contact__social-icon">
+              <div class="icon"></div>
+            </div>
+            <div class="contact__social-info">
+              <span class="contact__social-name">GitHub</span>
+              <span class="contact__social-handle" data-translate="contact.social.github">Code Repository</span>
+            </div>
+            <div class="contact__social-external" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </div>
+          </a>
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/yevhen-martynenko-v/"
+            class="contact__social icon__linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit LinkedIn profile"
+          >
+            <div class="contact__social-icon">
+              <div class="icon"></div>
+            </div>
+            <div class="contact__social-info">
+              <span class="contact__social-name">LinkedIn</span>
+              <span class="contact__social-handle" data-translate="contact.social.linkedin">Professional Network</span>
+            </div>
+            <div class="contact__social-external" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </div>
+          </a>
+          <!-- Medium -->
+          <a
+            href="https://medium.com/@yevhen.martynenko"
+            class="contact__social icon__medium"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Medium profile"
+          >
+            <div class="contact__social-icon">
+              <div class="icon"></div>
+            </div>
+            <div class="contact__social-info">
+              <span class="contact__social-name">Medium</span>
+              <span class="contact__social-handle" data-translate="contact.social.medium">Technical Writing</span>
+            </div>
+            <div class="contact__social-external" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

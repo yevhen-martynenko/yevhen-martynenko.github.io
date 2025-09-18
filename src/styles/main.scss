@@ -1,0 +1,96 @@
+@use "base/reset.scss" as *;
+@use "base/variables.scss" as *;
+@use "base/typography.scss" as *;
+@use "base/mixins.scss" as *;
+@use "base/animations.scss" as *;
+
+@use "base/globals.scss" as *;
+@use "modules/animations-init.scss" as *;
+@use "modules/header.scss" as *;
+@use "modules/footer.scss" as *;
+
+// ----------------------------------------------
+// Global
+// ----------------------------------------------
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: $font-body;
+  background-color: $color-surface;
+  color: $color-text;
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  &--narrow {
+    @extend .container;
+    max-width: $block-width;
+  }
+}
+
+// ----------------------------------------------
+// Section
+// ----------------------------------------------
+.section {
+  width: 100%;
+  padding: 5rem 0;
+
+  &:nth-of-type(odd) {
+    background-color: $color-surface;
+
+    .section__title {
+      @include gradient($color-accent, $color-primary);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &:nth-of-type(even) {
+    background-color: $color-surface-muted;
+
+    .section__title {
+      @include gradient($color-primary, $color-accent);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: $font-heading;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+  }
+
+  &__heading {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+    color: $color-accent;
+    font-family: $font-heading;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.33rem;
+      left: 0;
+      width: 4rem;
+      height: 0.25rem;
+      @include gradient($color-primary, $color-accent, 90deg);
+      border-radius: 2rem;
+    }
+  }
+}
