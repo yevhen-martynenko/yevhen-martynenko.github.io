@@ -4,13 +4,15 @@
 import en from "@/../public/i18n/en.messages.json";
 import ua from "@/../public/i18n/ua.messages.json";
 import ro from "@/../public/i18n/ro.messages.json";
+import is from "@/../public/i18n/is.messages.json";
 
-type Locale = "en" | "ua" | "ro";
+type Locale = "en" | "ua" | "ro" | "is";
 
 const messages_localizations: Record<Locale, typeof en> = {
   en,
   ua,
   ro,
+  is,
 };
 let current_language = "en";
 

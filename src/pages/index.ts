@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Translations
 // ----------------------------------------------
 const i18n = init_translations({
-  languages: ["en", "ua", "ro"],
+  languages: ["en", "ua", "is"],
   default_lang: "en",
   button_ids: ["language-toggle", "mobile-language-toggle"],
   display_ids: ["current-lang", "mobile-current-lang"],

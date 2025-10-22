@@ -28,6 +28,10 @@ export const typewriter_strings = {
     contact_comment: "Способи зв'язку зі мною",
     copy_comment: "Натисніть щоб скопіювати деталі",
   },
+  is: {
+    contact_comment: "Hlæða til að hafa samband með mig",
+    copy_comment: "Klikkja hafa samband með mig",
+  },
   ro: {
     contact_comment: "Modalitî de a mă contacta",
     copy_comment: "Apăsați pentru a coipa detaliile",
@@ -59,6 +63,18 @@ export const typewriter_sequences: TypewriterSequences = {
       { action: "type", value: "копіювати деталі" },
     ],
   },
+  is: {
+    contact_comment: [
+      { action: "type", value: "Hlæða til að gafa" },
+      { action: "backspace", count: 4 },
+      { action: "type", value: "hafa samband með mig" },
+    ],
+    copy_comment: [
+      { action: "type", value: "Klikkja hafa sambnda" },
+      { action: "backspace", count: 3 },
+      { action: "type", value: "and með mig" },
+    ]
+  },
   ro: {
     contact_comment: [
       { action: "type", value: "Modalitî" },
@@ -74,7 +90,7 @@ export const typewriter_sequences: TypewriterSequences = {
 };
 
 async function run_typewriters() {
-  await new Promise((resolve) => setTimeout(resolve, 250));
+  await new Promise((resolve) => setTimeout(resolve, 500));
 
   const comment_el = document.querySelector(".code__comment.typewrite-cbe") as HTMLElement | null;
   const comment_el_2 = document.querySelector(".code__comment.typewrite-dcb") as HTMLElement | null;

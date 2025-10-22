@@ -38,6 +38,7 @@ export function init_translations(options: TranslationOptions) {
           en: "EN",
           ua: "UA",
           ro: "RO",
+          is: "IS",
         };
         span.textContent = lang_map[current_lang] || current_lang.toUpperCase();
       }
