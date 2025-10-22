@@ -1,0 +1,153 @@
+{
+  "nav": {
+    "home": "Heim",
+    "experience": "Reynsla",
+    "skills": "Hæfni",
+    "portfolio": "Verkefni",
+    "blog": "Blogg",
+    "contact": "Tengiliðir"
+  },
+  "hero": {
+    "available": "Tiltækur til vinnu",
+    "unavailable": "Ekki tiltækur til vinnu",
+    "greeting": "Hæ, ég er",
+    "name": "Yevhen",
+    "role": "Full Stack forritari",
+    "description": "Full Stack forritari með áherslu á Python, Django og REST API. Ég skrifa hreinan, öruggan og skalanlegan kóða og nýt þess að breyta hugmyndum í virkan hugbúnað. Þegar ég er ekki að forrita er ég líklega að brjóta og laga Linux stillingarnar mínar.",
+    "contact_btn": "Hafa samband",
+    "cv_btn": "Hlaða niður ferilskrá",
+    "location": "Staðsetning: Reykjavík, Ísland",
+    "scroll": "skruna"
+  },
+  "experience": {
+    "title": "Reynsla",
+    "1": {
+      "position": "Full Stack forritari",
+      "company": "Einkaverkefni",
+      "period": "Apríl 2025 - September 2025",
+      "achievements": {
+        "1": "Þróaði Django-vef forrit með REST API með Django REST Framework.",
+        "2": "Útfærði framenda með TypeScript, HTML og SCSS, byggt með Webpack.",
+        "3": "Skrifaði próf fyrir öll API-endapunkt, með PyTest til að tryggja áreiðanleika og prófunarhlutfall.",
+        "4": "Setti upp og prófaði forritið á sýndarvél, metið öryggi og frammistöðu.",
+        "5": "Stillti þróunar- og prófunarumhverfi til að tryggja stöðugt vinnuflæði."
+      }
+    },
+    "2": {
+      "position": "Bakenda forritari",
+      "company": "Team Challenge",
+      "period": "Mars 2025 - Júní 2025",
+      "achievements": {
+        "1": "Þróaði RESTful API fyrir vörur með CRUD-aðgerðum, leit, röðun, síun og síðuskiptingu.",
+        "2": "Útfærði notandastjórnun og auðkenningu (nýskráning, innskráning, út, notendasnið) með JWT og Google Login.",
+        "3": "Bjó til API-skjalagerð með OpenAPI (Swagger).",
+        "4": "Sjálfvirkni verkefna með sérsniðnum Bash- og Python-skriftum.",
+        "5": "Hannaði og hámarkaði MySQL gagnagrunnsbyggingar."
+      }
+    },
+    "3": {
+      "position": "Þjálfari í netöryggi",
+      "company": "Kíburlögregla Úkraínu",
+      "period": "Febrúar 2024 - Júní 2024",
+      "achievements": {
+        "1": "Beitti tækni í öryggi vef forrita undir handleiðslu yfirmanna, prófaði veikleika.",
+        "2": "Vann með leiðbeinanda að rannsóknum á nútíma aðferðum við veföryggi.",
+        "3": "Þróaði Django-vef forrit fyrir lokaverkefni og prófaði það með stöðluðum öryggistólum.",
+        "4": "Fylgdist með vettvangsaðgerðum og handtökum til að öðlast raunhæfa reynslu í löggæslu."
+      }
+    }
+  },
+  "education": {
+    "title": "Menntun",
+    "1": {
+      "degree": "Bakkalárgráða",
+      "field": "Tölvunarfræði",
+      "university": "Odesa tæknilega háskólinn"
+    },
+    "2": {
+      "degree": "Styttri bakkalárgráða",
+      "field": "Upplýsingatækni",
+      "university": "Ríkisháskólinn í ITT"
+    }
+  },
+  "skills": {
+    "title": "Hæfni",
+    "technical": "Tæknileg hæfni",
+    "languages": "Tungumál",
+    "lang": {
+      "english": "Enska",
+      "romanian": "Rúmenska",
+      "ukrainian": "Úkraínska",
+      "russian": "Rússneska",
+      "spanish": "Spænska",
+      "icelandic": "Íslenska"
+    },
+    "level": {
+      "c2": "C2 Fullkomin kunnátta",
+      "c1": "C1 Háþróuð kunnátta",
+      "b2": "B2 Miðlungs-háþróuð",
+      "b1": "B1 Miðlungs",
+      "a2": "A2 Grunnstig",
+      "a1": "A1 Byrjandi",
+      "native": "Móðurmál"
+    },
+    "note": {
+      "english": "Fagleg færni í vinnuumhverfi, tæknileg skjölun",
+      "romanian": "Grunnskilningur, takmörkuð vinnufærni"
+    }
+  },
+  "portfolio": {
+    "title": "Verkefni",
+    "filter": {
+      "all": "Allt",
+      "work": "Vinna",
+      "cli": "CLI-tól",
+      "landing": "Lendingarsíður",
+      "apps": "Forrit"
+    },
+    "1": {
+      "title": "Persónuleg vefsíða",
+      "description": "Persónuleg vefsíða byggð með HTML, SCSS og TypeScript."
+    },
+    "2": {
+      "title": "Uppskriftaforrit",
+      "description": "Vef forrit til að búa til og stjórna uppskriftum. Byggt með Django og Django REST Framework.",
+      "note": "Verkefni er ekki lokið enn."
+    },
+    "3": {
+      "title": "Django Kosninga App",
+      "description": "Vef forrit til að búa til og taka þátt í skoðanakönnunum. Notendavænt viðmót og hluti af lokaverkefni mínu."
+    },
+    "4": {
+      "title": "Image Sorter",
+      "description": "Skipanalínutól í Python með curses, til að flokka, færa, endurnefna og eyða myndum með flýtivísum."
+    },
+    "5": {
+      "title": "Tkinter Lykilorðssmiður",
+      "description": "Einfalt Tkinter forrit til að búa til örugg lykilorð með grafísku viðmóti."
+    }
+  },
+  "contact": {
+    "title": "Hafa samband",
+    "email": {
+      "label": "Netfang",
+      "placeholder": "email@domain.com"
+    },
+    "message": {
+      "label": "Skilaboð",
+      "placeholder": "Skrifaðu skilaboð hér..."
+    },
+    "submit": "Senda skilaboð",
+    "social": {
+      "gmail": "yevhen.martynenko.v@gmail.com",
+      "proton": "yevhen.martynenko@proton.me",
+      "github": "Kóðasafn",
+      "linkedin": "Faglegt net",
+      "medium": "Tæknileg skrif"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Yevhen Martynenko",
+    "last_updated": "Síðast uppfært: september 2025"
+  }
+}

@@ -12,11 +12,11 @@
     "unavailable": "Not available for work",
     "greeting": "Hi, I'm",
     "name": "Yevhen",
-    "role": "Backend Developer",
-    "description": "Backend developer focused on Python, Django, and REST APIs. I write clean, secure, and scalable code, and enjoy turning ideas into working software. When I'm not coding, I'm probably breaking and fixing my Linux config.",
+    "role": "Full Stack Developer",
+    "description": "Full-stack developer focused on Python, Django, and REST APIs. I write clean, secure, and scalable code, and enjoy turning ideas into working software. When I'm not coding, I'm probably breaking and fixing my Linux config.",
     "contact_btn": "Contact me",
     "cv_btn": "Download CV",
-    "location": "Location: Chișinău, Moldova",
+    "location": "Location: Reykjavík, Iceland",
     "scroll": "scroll"
   },
   "experience": {
@@ -24,7 +24,7 @@
     "1": {
       "position": "Full Stack Developer",
       "company": "Personal Project",
-      "period": "April 2025 - Present",
+      "period": "April 2025 - September 2025",
       "achievements": {
         "1": "Developed a Django-based web application with a REST API using Django REST Framework.",
         "2": "Implemented frontend with TypeScript, HTML, and SCSS, bundled using Webpack.",

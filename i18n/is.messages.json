@@ -1,0 +1,13 @@
+{
+  "send_message": "Senda skilaboð",
+  "sending": "Sendi...",
+  "email_required": "Netfang er nauðsynlegt",
+  "email_invalid": "Vinsamlegast sláðu inn gilt netfang",
+  "message_required": "Skilaboð eru nauðsynleg",
+  "message_too_short": "Skilaboðin verða að vera að minnsta kosti 10 stafir",
+  "message_too_long": "Skilaboðin verða að vera styttri en 1000 stafir",
+  "fix_errors": "Vinsamlegast leiðréttu villurnar hér að ofan",
+  "success": "Takk! Skilaboðin þín hafa verið send.",
+  "failed": "Tókst ekki að senda skilaboðin. Reyndu aftur.",
+  "error": "Villa kom upp. Reyndu aftur síðar."
+}
